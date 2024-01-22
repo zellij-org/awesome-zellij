@@ -1,2 +1,3 @@
 # awesome-zellij
- A list of awesome resources for zellij
+
+A list of resources for zellij plugins, tutorials, and configuration settings.
