@@ -1,5 +1,5 @@
 <h1 align="center">  
-awesome-zellij
+awesome [zellij](https://github.com/zellij-org/zellij)
   
 </h1>
 
