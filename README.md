@@ -23,7 +23,13 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [jbz (Just Bacon Zellij)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
 
 # Tutorials
+## Basics
+* [Zellij basic functionality](https://zellij.dev/tutorials/basic-functionality/)
+* [Using and creating Layouts](https://zellij.dev/tutorials/layouts/)
 ## Plugins
-* [A Comprehensive walkthrough on developing Zellij plugins](https://github.com/Kangaxx-0/first-zellij-plugin)
+* [A comprehensive walkthrough on developing Zellij plugins](https://github.com/Kangaxx-0/first-zellij-plugin)
 * [Learnings from developing a zellij plugin](https://blog.nerd.rocks/posts/profiling-zellij-plugins/) an informative blog post from the creator of [zjstatus](https://github.com/dj95/zjstatus).
 
+## Documentation and support
+* [The zellij docs](https://zellij.dev/documentation/introduction)
+* and of course the zellij [Discord](https://discord.com/invite/CrUAFH3) and [Matrix](https://matrix.to/#/#zellij_general:matrix.org) for questions, support and discussions
