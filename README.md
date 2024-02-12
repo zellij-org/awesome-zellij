@@ -28,7 +28,8 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [Using and creating Layouts](https://zellij.dev/tutorials/layouts/)
 ## Plugins
 * [A comprehensive walkthrough on developing Zellij plugins](https://github.com/Kangaxx-0/first-zellij-plugin)
-* [Learnings from developing a zellij plugin](https://blog.nerd.rocks/posts/profiling-zellij-plugins/) an informative blog post from the creator of [zjstatus](https://github.com/dj95/zjstatus).
+* [Learnings from developing a zellij plugin](https://blog.nerd.rocks/posts/profiling-zellij-plugins/) an informative blog post from the creator of [zjstatus](https://github.com/dj95/zjstatus)
+* [Developing WebAssembly Rust plugins for Zellij](https://www.youtube.com/watch?v=pgNIcQ8rTXk) Aram Drevekenin's talk at RustLab 2023
 
 ## Documentation and support
 * [The zellij docs](https://zellij.dev/documentation/introduction)
