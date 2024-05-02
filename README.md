@@ -21,6 +21,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
 * [multitask](https://github.com/imsnif/multitask) a mini-CI as a Zellij plugin
 * [jbz (Just Bacon Zellij)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
+* [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 
 # Tutorials
 ## Basics
@@ -30,6 +31,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [A comprehensive walkthrough on developing Zellij plugins](https://github.com/Kangaxx-0/first-zellij-plugin)
 * [Learnings from developing a zellij plugin](https://blog.nerd.rocks/posts/profiling-zellij-plugins/) an informative blog post from the creator of [zjstatus](https://github.com/dj95/zjstatus)
 * [Developing WebAssembly Rust plugins for Zellij](https://www.youtube.com/watch?v=pgNIcQ8rTXk) Aram Drevekenin's talk at RustLab 2023
+* [How to use Zellij Switch plugin](https://mostafaqanbaryan.com/zellij-attach-plugin/) a little speech about using fzf and zoxide with zellij-switch
 
 ## Documentation and support
 * [The zellij docs](https://zellij.dev/documentation/introduction)
