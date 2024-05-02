@@ -31,7 +31,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [A comprehensive walkthrough on developing Zellij plugins](https://github.com/Kangaxx-0/first-zellij-plugin)
 * [Learnings from developing a zellij plugin](https://blog.nerd.rocks/posts/profiling-zellij-plugins/) an informative blog post from the creator of [zjstatus](https://github.com/dj95/zjstatus)
 * [Developing WebAssembly Rust plugins for Zellij](https://www.youtube.com/watch?v=pgNIcQ8rTXk) Aram Drevekenin's talk at RustLab 2023
-* [How to use Zellij Switch plugin](https://mostafaqanbaryan.com/zellij-attach-plugin/) a little speech about using fzf and zoxide with zellij-switch
+* [How to use Zellij Switch plugin](https://mostafaqanbaryan.com/zellij-attach-plugin/) a blog post about using fzf and zoxide with zellij-switch
 
 ## Documentation and support
 * [The zellij docs](https://zellij.dev/documentation/introduction)
