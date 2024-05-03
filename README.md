@@ -22,6 +22,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [multitask](https://github.com/imsnif/multitask) a mini-CI as a Zellij plugin
 * [jbz (Just Bacon Zellij)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
+* [https://github.com/hiasr/vim-zellij-navigator] Seamless navigation with vim in zellij
 
 # Tutorials
 ## Basics
