@@ -23,6 +23,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [jbz (Just Bacon Zellij)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
+* [zjpane](https://github.com/FuriouZz/zjpane) navigate panes and execute user registered command
 
 # Tutorials
 ## Basics
