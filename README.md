@@ -24,6 +24,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
+* [zj-status-bar](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
 
 
 # Tutorials
