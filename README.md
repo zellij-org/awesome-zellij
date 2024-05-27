@@ -1,4 +1,3 @@
-
 # Awesome [Zellij](https://github.com/zellij-org/zellij)
 
 A list of resources for Zellij workspace: plugins, tutorials and configuration settings.
@@ -15,6 +14,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [multitask](https://github.com/imsnif/multitask) a mini-CI as a Zellij plugin
 * [room](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
+* [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim). 
 * [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij 
 * [zellij-datetime](https://github.com/h1romas4/zellij-datetime) adds a date and time pane to your Zellij
 * [zellij-forgot](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
@@ -26,11 +26,12 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 * [zjstatus](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 
-
 # Tutorials
+
 ## Basics
 * [Zellij basic functionality](https://zellij.dev/tutorials/basic-functionality/)
 * [Using and creating Layouts](https://zellij.dev/tutorials/layouts/)
+
 ## Plugins
 * [A comprehensive walkthrough on developing Zellij plugins](https://github.com/Kangaxx-0/first-zellij-plugin)
 * [Learnings from developing a zellij plugin](https://blog.nerd.rocks/posts/profiling-zellij-plugins/) an informative blog post from the creator of [zjstatus](https://github.com/dj95/zjstatus)
