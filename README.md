@@ -23,6 +23,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-workspace](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
 * [zj-docker](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
 * [zj-status-bar](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
+* [zj-quit](https://github.com/cristiand391/zj-quit) a friendly `quit` plugin for zellij 
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 * [zjstatus](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 
