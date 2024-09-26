@@ -15,10 +15,12 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [room](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
 * [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim). 
-* [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij 
+* [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
+* [zellij-choose-tree](https://github.com/laperlej/zellij-choose-tree) quickly switch between sessions, inspired by tmux choose-tree
 * [zellij-datetime](https://github.com/h1romas4/zellij-datetime) adds a date and time pane to your Zellij
 * [zellij-forgot](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
+* [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [zellij-what-time](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
 * [zellij-workspace](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
