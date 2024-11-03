@@ -29,6 +29,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zj-quit](https://github.com/cristiand391/zj-quit) a friendly `quit` plugin for zellij 
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 * [zjstatus](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
+* [zbuffers](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
 
 # Tutorials
 
