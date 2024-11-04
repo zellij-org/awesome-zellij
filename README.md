@@ -14,6 +14,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [multitask](https://github.com/imsnif/multitask) a mini-CI as a Zellij plugin
 * [room](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
+* [zbuffers](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
 * [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim). 
 * [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
 * [zellij-choose-tree](https://github.com/laperlej/zellij-choose-tree) quickly switch between sessions, inspired by tmux choose-tree
@@ -29,7 +30,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zj-quit](https://github.com/cristiand391/zj-quit) a friendly `quit` plugin for zellij 
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 * [zjstatus](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
-* [zbuffers](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
+
 
 # Tutorials
 
