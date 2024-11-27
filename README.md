@@ -25,6 +25,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [zellij-what-time](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
 * [zellij-workspace](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
+* [zellij-bookmarks](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
 * [zj-docker](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
 * [zj-status-bar](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
 * [zj-quit](https://github.com/cristiand391/zj-quit) a friendly `quit` plugin for zellij 
