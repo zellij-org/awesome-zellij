@@ -31,7 +31,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 * [zjstatus](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 
-# Scripts
+# Integrations
 
 * [zellix](https://github.com/TheEmeraldBee/zellix) A nushell wrapper over helix that leverages the power of zellij to turn it into a plugin system!
 
