@@ -20,6 +20,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
 * [zellij-choose-tree](https://github.com/laperlej/zellij-choose-tree) quickly switch between sessions, inspired by tmux choose-tree
 * [zellij-datetime](https://github.com/h1romas4/zellij-datetime) adds a date and time pane to your Zellij
+* [zellij-favs](https://github.com/JoseMM2002/zellij-favs) adds a way to save favorites sessions and flush the others
 * [zellij-forgot](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
 * [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
