@@ -36,6 +36,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 # Integrations
 
+* [yazelix](https://github.com/luccahuguet/yazelix) zellij, yazi and nushell adding a File Tree to Helix & helix-friendly keybindigs for zellij!
 * [zellix](https://github.com/TheEmeraldBee/zellix) A nushell wrapper over helix that leverages the power of zellij to turn it into a plugin system!
 
 # Tutorials
