@@ -38,6 +38,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 * [yazelix](https://github.com/luccahuguet/yazelix) zellij, yazi and nushell adding a File Tree to Helix & helix-friendly keybindigs for zellij!
 * [zellix](https://github.com/TheEmeraldBee/zellix) A nushell wrapper over helix that leverages the power of zellij to turn it into a plugin system!
+* [zide](https://github.com/josephschmitt/zide) Zellij layouts + bash scripts to create an IDE-like file picker and editor workflow that works in any shell and with most any visual file pickers!
 
 # Tutorials
 
