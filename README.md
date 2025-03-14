@@ -33,6 +33,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 * [zjstatus](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 * [zjswitcher](https://github.com/WingsZeng/zjswitcher) automatically switche between normal mode and locked mode
+* [zj-git-branch](https://github.com/dam4rus/zj-git-branch) Manage git branches
 
 # Integrations
 
