@@ -24,6 +24,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-forgot](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
 * [zellij-getmode](https://github.com/chardskarth/zellij-getmode) a simple utility plugin that gets the current input mode of zellij
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
+* [zellij-pane-picker](https://github.com/shihanng/zellij-pane-picker) quickly switch, star, and jump to panes with customizable keyboard shortcuts
 * [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [zellij-what-time](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
