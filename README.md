@@ -14,7 +14,6 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [multitask](https://github.com/imsnif/multitask) a mini-CI as a Zellij plugin
 * [room](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
-* [zellij-nvim-nav-plugin](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
 * [zbuffers](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
 * [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim). 
 * [zellij-bookmarks](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
@@ -25,6 +24,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-forgot](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
 * [zellij-getmode](https://github.com/chardskarth/zellij-getmode) a simple utility plugin that gets the current input mode of zellij
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
+* [zellij-nvim-nav-plugin](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
 * [zellij-pane-picker](https://github.com/shihanng/zellij-pane-picker) quickly switch, star, and jump to panes with customizable keyboard shortcuts
 * [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
