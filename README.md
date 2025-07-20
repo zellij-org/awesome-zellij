@@ -38,6 +38,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjstatus-hints](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
 * [zjswitcher](https://github.com/WingsZeng/zjswitcher) automatically switche between normal mode and locked mode
 * [zj-git-branch](https://github.com/dam4rus/zj-git-branch) Manage git branches
+* [zsm](https://github.com/liam-mackie/zsm) A zoxide-integrated session switcher with support for default layouts
 
 # Integrations
 
