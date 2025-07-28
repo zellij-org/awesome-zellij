@@ -42,6 +42,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 # Integrations
 
+* [theylix](https://codeberg.org/hobgoblina/theylix) Zellij, Helix, and various cli tools ([Yazi](https://github.com/sxyazi/yazi), [Lazygit](https://github.com/jesseduffield/lazygit), [LazySQL](https://github.com/jorgerojas26/lazysql), [Slumber](https://github.com/LucasPickering/slumber), [Serpl](https://github.com/yassinebridi/serpl), `git blame` via [Tig](https://github.com/jonas/tig)) as a zen-mode IDE
 * [yazelix](https://github.com/luccahuguet/yazelix) zellij, yazi and nushell adding a File Tree to Helix & helix-friendly keybindigs for zellij!
 * [zeco](https://github.com/julianbuettner/zeco) Share your zellij session over the internet, easy and secure!
 * [zellix](https://github.com/TheEmeraldBee/zellix) A nushell wrapper over helix that leverages the power of zellij to turn it into a plugin system!
