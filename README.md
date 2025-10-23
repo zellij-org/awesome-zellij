@@ -8,6 +8,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 * [ghost](https://github.com/vdbulcke/ghost) spawn floating command terminal pane (interactive zrf)
 * [gitpod.zellij](https://github.com/gitpod-samples/gitpod.zellij) Zellij plugin for Gitpod, with .gitpod.yml tasks integration
+* [grab](https://github.com/imsnif/grab) A fuzzy finder (files, structs, enums, functions) for Rust devs
 * [harpoon](https://github.com/Nacho114/harpoon) quickly navigate panes (clone of nvim's harpoon) 
 * [jbz (Just Bacon Zellij)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
 * [monocole](https://github.com/imsnif/monocle) fuzzy find of file names and contents
