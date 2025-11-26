@@ -25,6 +25,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-forgot](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
 * [zellij-getmode](https://github.com/chardskarth/zellij-getmode) a simple utility plugin that gets the current input mode of zellij
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
+* [zellij-newtab-plus](https://github.com/AlexZasorin/zellij-newtab-plus) create named tabs and navigate using zoxide in one keybind
 * [zellij-nvim-nav-plugin](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
 * [zellij-pane-picker](https://github.com/shihanng/zellij-pane-picker) quickly switch, star, and jump to panes with customizable keyboard shortcuts
 * [zellij-playbooks](https://github.com/yaroslavborbat/zellij-playbooks) browse, select, and execute commands from playbook files directly in the terminal
