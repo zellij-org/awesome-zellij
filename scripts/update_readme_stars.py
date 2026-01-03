@@ -1,0 +1,225 @@
+#!/usr/bin/env python3
+import json
+import os
+import re
+import sys
+import time
+from urllib.parse import urlparse
+from urllib.request import Request, urlopen
+
+from dotenv import load_dotenv
+
+README_PATH = "README.md"
+DATA_PATH = "data/projects.json"
+SECTIONS = ["Plugins", "Integrations"]
+
+
+def fetch_github_stars(owner: str, repo: str) -> int:
+    url = f"https://api.github.com/repos/{owner}/{repo}"
+    headers = {"User-Agent": "awesome-zellij-star-updater"}
+    token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    req = Request(url, headers=headers)
+    with urlopen(req, timeout=20) as resp:
+        data = json.load(resp)
+    return int(data.get("stargazers_count", 0))
+
+
+def parse_repo(url: str):
+    parsed = urlparse(url)
+    if parsed.netloc.lower() != "github.com":
+        return None
+    parts = parsed.path.strip("/").split("/")
+    if len(parts) < 2:
+        return None
+    owner, repo = parts[0], parts[1]
+    repo = repo.removesuffix(".git")
+    return owner, repo
+
+
+def parse_readme_sections(lines):
+    sections = {}
+    current = None
+    for line in lines:
+        if line.startswith("# "):
+            title = line[2:].strip()
+            current = title
+            if current in SECTIONS:
+                sections.setdefault(current, [])
+            continue
+        if current not in SECTIONS:
+            continue
+
+        if line.startswith("*"):
+            match = re.match(r"^\* \[(.+?)\]\((.+?)\)\s*(.*)$", line)
+            if not match:
+                continue
+            name, url, desc = match.groups()
+            sections[current].append(
+                {
+                    "name": name,
+                    "url": url,
+                    "description": desc.strip(),
+                    "stars": None,
+                }
+            )
+            continue
+
+        if line.startswith("|") and "[" in line and "](" in line:
+            match = re.match(
+                r"^\|\s*\[(.+?)\]\((.+?)\)\s*\|\s*([^|]*?)\s*\|\s*(.*?)\s*\|\s*$",
+                line,
+            )
+            if not match:
+                continue
+            name, url, stars_text, desc = match.groups()
+            stars_text = stars_text.strip()
+            stars = None
+            if stars_text and stars_text.upper() != "N/A":
+                try:
+                    stars = int(stars_text.replace(",", ""))
+                except ValueError:
+                    stars = None
+            sections[current].append(
+                {
+                    "name": name,
+                    "url": url,
+                    "description": desc.strip(),
+                    "stars": stars,
+                }
+            )
+    return sections
+
+
+def load_data(lines):
+    if os.path.exists(DATA_PATH):
+        with open(DATA_PATH, "r", encoding="utf-8") as handle:
+            return json.load(handle)
+
+    sections = parse_readme_sections(lines)
+    data = {
+        "sections": [
+            {"title": title, "items": sections.get(title, [])}
+            for title in SECTIONS
+        ]
+    }
+    os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
+    with open(DATA_PATH, "w", encoding="utf-8") as handle:
+        json.dump(data, handle, indent=2, ensure_ascii=True)
+        handle.write("\n")
+    return data
+
+
+def save_data(data):
+    os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
+    with open(DATA_PATH, "w", encoding="utf-8") as handle:
+        json.dump(data, handle, indent=2, ensure_ascii=True)
+        handle.write("\n")
+
+
+def format_stars(stars):
+    if stars is None:
+        return "N/A"
+    return f"{stars:,}"
+
+
+def build_table(items):
+    lines = [
+        "| Project | Stars | Description |",
+        "| --- | --- | --- |",
+    ]
+    for item in items:
+        desc = item["description"].replace("|", "\\|")
+        lines.append(
+            f"| [{item['name']}]({item['url']}) | {format_stars(item['stars'])} | {desc} |"
+        )
+    return lines
+
+
+def main():
+    load_dotenv()
+    with open(README_PATH, "r", encoding="utf-8") as f:
+        lines = f.read().splitlines()
+
+    def find_section_range(current_lines, title):
+        start_idx = None
+        for idx, line in enumerate(current_lines):
+            if line.startswith("# ") and line[2:].strip() == title:
+                start_idx = idx
+                break
+        if start_idx is None:
+            return None
+        end_idx = len(current_lines)
+        for idx in range(start_idx + 1, len(current_lines)):
+            if current_lines[idx].startswith("# "):
+                end_idx = idx
+                break
+        return start_idx, end_idx
+
+    found_sections = [
+        section for section in SECTIONS if find_section_range(lines, section)
+    ]
+    if not found_sections:
+        print("No matching sections found.", file=sys.stderr)
+        return 1
+
+    data = load_data(lines)
+    new_lines = lines[:]
+
+    for section in data.get("sections", []):
+        title = section.get("title")
+        if title not in SECTIONS:
+            continue
+        section_range = find_section_range(new_lines, title)
+        if not section_range:
+            continue
+        start_idx, end_idx = section_range
+
+        items = section.get("items", [])
+        if not items:
+            continue
+
+        for item in items:
+            existing_stars = item.get("stars")
+            repo = parse_repo(item["url"])
+            if not repo:
+                item["stars"] = existing_stars
+                continue
+            owner, repo_name = repo
+            try:
+                item["stars"] = fetch_github_stars(owner, repo_name)
+            except Exception as exc:
+                print(
+                    f"Failed to fetch stars for {owner}/{repo_name}: {exc}",
+                    file=sys.stderr,
+                )
+                item["stars"] = existing_stars
+            time.sleep(0.1)
+
+        items.sort(
+            key=lambda x: (
+                1 if x.get("stars") is None else 0,
+                -(x.get("stars") or 0),
+                x["name"].lower(),
+            )
+        )
+
+        table_lines = build_table(items)
+        new_lines = (
+            new_lines[: start_idx + 1]
+            + [""]
+            + table_lines
+            + [""]
+            + new_lines[end_idx:]
+        )
+
+    with open(README_PATH, "w", encoding="utf-8") as f:
+        f.write("\n".join(new_lines) + "\n")
+    save_data(data)
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,278 @@
+{
+  "sections": [
+    {
+      "title": "Plugins",
+      "items": [
+        {
+          "name": "zjstatus",
+          "url": "https://github.com/dj95/zjstatus",
+          "description": "a configurable, themeable statusbar plugin",
+          "stars": 812
+        },
+        {
+          "name": "room",
+          "url": "https://github.com/rvcas/room",
+          "description": "quickly search and switch tabs \ud83d\udda4",
+          "stars": 228
+        },
+        {
+          "name": "zellij-forgot",
+          "url": "https://github.com/karimould/zellij-forgot",
+          "description": "swiftly present and access your keybinds (and more)",
+          "stars": 202
+        },
+        {
+          "name": "monocole",
+          "url": "https://github.com/imsnif/monocle",
+          "description": "fuzzy find of file names and contents",
+          "stars": 183
+        },
+        {
+          "name": "harpoon",
+          "url": "https://github.com/Nacho114/harpoon",
+          "description": "quickly navigate panes (clone of nvim's harpoon)",
+          "stars": 159
+        },
+        {
+          "name": "vim-zellij-navigator",
+          "url": "https://github.com/hiasr/vim-zellij-navigator",
+          "description": "Seamless navigation with vim in zellij",
+          "stars": 151
+        },
+        {
+          "name": "multitask",
+          "url": "https://github.com/imsnif/multitask",
+          "description": "a mini-CI as a Zellij plugin",
+          "stars": 135
+        },
+        {
+          "name": "zellij-autolock",
+          "url": "https://github.com/fresh2dev/zellij-autolock",
+          "description": "Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).",
+          "stars": 128
+        },
+        {
+          "name": "zellij-sessionizer",
+          "url": "https://github.com/laperlej/zellij-sessionizer",
+          "description": "create sessions based on folder names",
+          "stars": 58
+        },
+        {
+          "name": "ghost",
+          "url": "https://github.com/vdbulcke/ghost",
+          "description": "spawn floating command terminal pane (interactive zrf)",
+          "stars": 56
+        },
+        {
+          "name": "zellij-datetime",
+          "url": "https://github.com/h1romas4/zellij-datetime",
+          "description": "adds a date and time pane to your Zellij",
+          "stars": 44
+        },
+        {
+          "name": "zellij-switch",
+          "url": "https://github.com/mostafaqanbaryan/zellij-switch",
+          "description": "switching between sessions in CLI using `zellij pipe`",
+          "stars": 42
+        },
+        {
+          "name": "zjstatus-hints",
+          "url": "https://github.com/b0o/zjstatus-hints",
+          "description": "adds mode-aware key binding hints to zjstatus",
+          "stars": 42
+        },
+        {
+          "name": "jbz (Just Bacon Zellij)",
+          "url": "https://github.com/nim65s/jbz",
+          "description": "display your just commands wrapped in bacon",
+          "stars": 41
+        },
+        {
+          "name": "zj-quit",
+          "url": "https://github.com/cristiand391/zj-quit",
+          "description": "a friendly `quit` plugin for zellij",
+          "stars": 41
+        },
+        {
+          "name": "zellij-choose-tree",
+          "url": "https://github.com/laperlej/zellij-choose-tree",
+          "description": "quickly switch between sessions, inspired by tmux choose-tree",
+          "stars": 38
+        },
+        {
+          "name": "zellij-cb",
+          "url": "https://github.com/ndavd/zellij-cb",
+          "description": "a customizable compact bar for Zellij",
+          "stars": 37
+        },
+        {
+          "name": "zj-docker",
+          "url": "https://github.com/dj95/zj-docker",
+          "description": "display docker containers and perform basic operations",
+          "stars": 37
+        },
+        {
+          "name": "zj-status-bar",
+          "url": "https://github.com/cristiand391/zj-status-bar",
+          "description": "an opinionated fork of the compact-bar plugin",
+          "stars": 33
+        },
+        {
+          "name": "zellij-bookmarks",
+          "url": "https://github.com/yaroslavborbat/zellij-bookmarks",
+          "description": "manage command bookmarks and quickly insert them into the terminal",
+          "stars": 32
+        },
+        {
+          "name": "zellij-workspace",
+          "url": "https://github.com/vdbulcke/zellij-workspace",
+          "description": "apply layouts to current session",
+          "stars": 30
+        },
+        {
+          "name": "zellij-jump-list",
+          "url": "https://github.com/blank2121/zellij-jump-list",
+          "description": "navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)",
+          "stars": 23
+        },
+        {
+          "name": "zsm",
+          "url": "https://github.com/liam-mackie/zsm",
+          "description": "A zoxide-integrated session switcher with support for default layouts",
+          "stars": 20
+        },
+        {
+          "name": "zellij-favs",
+          "url": "https://github.com/JoseMM2002/zellij-favs",
+          "description": "adds a way to save favorites sessions and flush the others",
+          "stars": 19
+        },
+        {
+          "name": "zbuffers",
+          "url": "https://github.com/Strech/zbuffers",
+          "description": "a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager",
+          "stars": 18
+        },
+        {
+          "name": "grab",
+          "url": "https://github.com/imsnif/grab",
+          "description": "A fuzzy finder (files, structs, enums, functions) for Rust devs",
+          "stars": 15
+        },
+        {
+          "name": "zellij-pane-picker",
+          "url": "https://github.com/shihanng/zellij-pane-picker",
+          "description": "quickly switch, star, and jump to panes with customizable keyboard shortcuts",
+          "stars": 15
+        },
+        {
+          "name": "zellij-playbooks",
+          "url": "https://github.com/yaroslavborbat/zellij-playbooks",
+          "description": "browse, select, and execute commands from playbook files directly in the terminal",
+          "stars": 15
+        },
+        {
+          "name": "zjpane",
+          "url": "https://github.com/FuriouZz/zjpane",
+          "description": "Navigate between zellij panes easily",
+          "stars": 12
+        },
+        {
+          "name": "zjswitcher",
+          "url": "https://github.com/WingsZeng/zjswitcher",
+          "description": "automatically switch between normal mode and locked mode",
+          "stars": 12
+        },
+        {
+          "name": "zellij-what-time",
+          "url": "https://github.com/pirafrank/zellij-what-time",
+          "description": "shows host system date and/or time in the status bar. Inspired by zellij-datetime",
+          "stars": 10
+        },
+        {
+          "name": "gitpod.zellij",
+          "url": "https://github.com/gitpod-samples/gitpod.zellij",
+          "description": "Zellij plugin for Gitpod, with .gitpod.yml tasks integration",
+          "stars": 9
+        },
+        {
+          "name": "zellij-nvim-nav-plugin",
+          "url": "https://github.com/sharph/zellij-nvim-nav-plugin",
+          "description": "Another plugin for seamless navigation with neovim/vim windows",
+          "stars": 8
+        },
+        {
+          "name": "zellij-newtab-plus",
+          "url": "https://github.com/AlexZasorin/zellij-newtab-plus",
+          "description": "create named tabs and navigate using zoxide in one keybind",
+          "stars": 5
+        },
+        {
+          "name": "zj-git-branch",
+          "url": "https://github.com/dam4rus/zj-git-branch",
+          "description": "Manage git branches",
+          "stars": 4
+        },
+        {
+          "name": "zellij-getmode",
+          "url": "https://github.com/chardskarth/zellij-getmode",
+          "description": "a simple utility plugin that gets the current input mode of zellij",
+          "stars": 0
+        }
+      ]
+    },
+    {
+      "title": "Integrations",
+      "items": [
+        {
+          "name": "yazelix",
+          "url": "https://github.com/luccahuguet/yazelix",
+          "description": "zellij, yazi and nushell adding a File Tree to Helix & helix-friendly keybindigs for zellij!",
+          "stars": 710
+        },
+        {
+          "name": "zide",
+          "url": "https://github.com/josephschmitt/zide",
+          "description": "Zellij layouts + bash scripts to create an IDE-like file picker and editor workflow that works in any shell and with most any visual file pickers!",
+          "stars": 269
+        },
+        {
+          "name": "zeco",
+          "url": "https://github.com/julianbuettner/zeco",
+          "description": "Share your zellij session over the internet, easy and secure!",
+          "stars": 56
+        },
+        {
+          "name": "zellix",
+          "url": "https://github.com/TheEmeraldBee/zellix",
+          "description": "A nushell wrapper over helix that leverages the power of zellij to turn it into a plugin system!",
+          "stars": 48
+        },
+        {
+          "name": "zellij-sessionizer",
+          "url": "https://github.com/victor-falcon/zellij-sessionizer",
+          "description": "A fuzzy finder-powered project switcher for Zellij sessions, inspired by [ThePrimeagen/tmux-sessionizer](https://github.com/ThePrimeagen/tmux-sessionizer)",
+          "stars": 37
+        },
+        {
+          "name": "fzf-zellij",
+          "url": "https://github.com/k-kuroguro/fzf-zellij",
+          "description": "Shell script to start fzf in a Zellij floating pane.",
+          "stars": 8
+        },
+        {
+          "name": "opencode-zellij-namer",
+          "url": "https://github.com/24601/opencode-zellij-namer",
+          "description": "AI-powered dynamic session naming for [OpenCode](https://opencode.ai), automatically renames sessions based on project context",
+          "stars": 6
+        },
+        {
+          "name": "theylix",
+          "url": "https://codeberg.org/hobgoblina/theylix",
+          "description": "Zellij, Helix, and various cli tools ([Yazi](https://github.com/sxyazi/yazi), [Lazygit](https://github.com/jesseduffield/lazygit), [LazySQL](https://github.com/jorgerojas26/lazysql), [Slumber](https://github.com/LucasPickering/slumber), [Serpl](https://github.com/yassinebridi/serpl), `git blame` via [Tig](https://github.com/jonas/tig)) as a zen-mode IDE",
+          "stars": null
+        }
+      ]
+    }
+  ]
+}
