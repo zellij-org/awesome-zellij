@@ -4,6 +4,7 @@ import os
 import re
 import sys
 import time
+from datetime import datetime, timezone
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
@@ -126,7 +127,7 @@ def format_stars(stars):
 
 def build_table(items):
     lines = [
-        "| Project | Stars | Description |",
+        "| Project | Stars ⭐ | Description |",
         "| --- | --- | --- |",
     ]
     for item in items:
@@ -134,6 +135,25 @@ def build_table(items):
         lines.append(
             f"| [{item['name']}]({item['url']}) | {format_stars(item['stars'])} | {desc} |"
         )
+    return lines
+
+
+def update_timestamp(lines, timestamp):
+    target = "Last updated:"
+    for idx, line in enumerate(lines):
+        if line.startswith(target):
+            lines[idx] = f"{target} {timestamp}"
+            return lines
+
+    anchor = "All the resources listed are community-driven:"
+    for idx, line in enumerate(lines):
+        if line.startswith(anchor):
+            insert_at = idx + 1
+            lines[insert_at:insert_at] = ["", f"{target} {timestamp}"]
+            return lines
+
+    lines.insert(0, f"{target} {timestamp}")
+    lines.insert(1, "")
     return lines
 
 
@@ -215,6 +235,8 @@ def main():
         )
 
     with open(README_PATH, "w", encoding="utf-8") as f:
+        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        new_lines = update_timestamp(new_lines, timestamp)
         f.write("\n".join(new_lines) + "\n")
     save_data(data)
 

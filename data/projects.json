@@ -55,7 +55,7 @@
           "name": "zellij-sessionizer",
           "url": "https://github.com/laperlej/zellij-sessionizer",
           "description": "create sessions based on folder names",
-          "stars": 58
+          "stars": 59
         },
         {
           "name": "ghost",
@@ -270,7 +270,7 @@
           "name": "theylix",
           "url": "https://codeberg.org/hobgoblina/theylix",
           "description": "Zellij, Helix, and various cli tools ([Yazi](https://github.com/sxyazi/yazi), [Lazygit](https://github.com/jesseduffield/lazygit), [LazySQL](https://github.com/jorgerojas26/lazysql), [Slumber](https://github.com/LucasPickering/slumber), [Serpl](https://github.com/yassinebridi/serpl), `git blame` via [Tig](https://github.com/jonas/tig)) as a zen-mode IDE",
-          "stars": null
+          "stars": 1
         }
       ]
     }

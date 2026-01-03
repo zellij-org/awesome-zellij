@@ -4,9 +4,11 @@ A list of resources for Zellij workspace: plugins, tutorials and configuration s
 
 All the resources listed are community-driven: we cannot offer support but suggestions and comments are very welcome.
 
+Last updated: 2026-01-03
+
 # Plugins
 
-| Project | Stars | Description |
+| Project | Stars ⭐ | Description |
 | --- | --- | --- |
 | [zjstatus](https://github.com/dj95/zjstatus) | 812 | a configurable, themeable statusbar plugin |
 | [room](https://github.com/rvcas/room) | 228 | quickly search and switch tabs 🖤 |
@@ -16,7 +18,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 | [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) | 151 | Seamless navigation with vim in zellij |
 | [multitask](https://github.com/imsnif/multitask) | 135 | a mini-CI as a Zellij plugin |
 | [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) | 128 | Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim). |
-| [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) | 58 | create sessions based on folder names |
+| [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) | 59 | create sessions based on folder names |
 | [ghost](https://github.com/vdbulcke/ghost) | 56 | spawn floating command terminal pane (interactive zrf) |
 | [zellij-datetime](https://github.com/h1romas4/zellij-datetime) | 44 | adds a date and time pane to your Zellij |
 | [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) | 42 | switching between sessions in CLI using `zellij pipe` |
@@ -47,7 +49,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 # Integrations
 
-| Project | Stars | Description |
+| Project | Stars ⭐ | Description |
 | --- | --- | --- |
 | [yazelix](https://github.com/luccahuguet/yazelix) | 710 | zellij, yazi and nushell adding a File Tree to Helix & helix-friendly keybindigs for zellij! |
 | [zide](https://github.com/josephschmitt/zide) | 269 | Zellij layouts + bash scripts to create an IDE-like file picker and editor workflow that works in any shell and with most any visual file pickers! |
@@ -56,7 +58,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 | [zellij-sessionizer](https://github.com/victor-falcon/zellij-sessionizer) | 37 | A fuzzy finder-powered project switcher for Zellij sessions, inspired by [ThePrimeagen/tmux-sessionizer](https://github.com/ThePrimeagen/tmux-sessionizer) |
 | [fzf-zellij](https://github.com/k-kuroguro/fzf-zellij) | 8 | Shell script to start fzf in a Zellij floating pane. |
 | [opencode-zellij-namer](https://github.com/24601/opencode-zellij-namer) | 6 | AI-powered dynamic session naming for [OpenCode](https://opencode.ai), automatically renames sessions based on project context |
-| [theylix](https://codeberg.org/hobgoblina/theylix) | N/A | Zellij, Helix, and various cli tools ([Yazi](https://github.com/sxyazi/yazi), [Lazygit](https://github.com/jesseduffield/lazygit), [LazySQL](https://github.com/jorgerojas26/lazysql), [Slumber](https://github.com/LucasPickering/slumber), [Serpl](https://github.com/yassinebridi/serpl), `git blame` via [Tig](https://github.com/jonas/tig)) as a zen-mode IDE |
+| [theylix](https://codeberg.org/hobgoblina/theylix) | 1 | Zellij, Helix, and various cli tools ([Yazi](https://github.com/sxyazi/yazi), [Lazygit](https://github.com/jesseduffield/lazygit), [LazySQL](https://github.com/jorgerojas26/lazysql), [Slumber](https://github.com/LucasPickering/slumber), [Serpl](https://github.com/yassinebridi/serpl), `git blame` via [Tig](https://github.com/jonas/tig)) as a zen-mode IDE |
 
 # Tutorials
 
