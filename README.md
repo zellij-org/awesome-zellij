@@ -30,6 +30,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-nvim-nav-plugin](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
 * [zellij-pane-picker](https://github.com/shihanng/zellij-pane-picker) quickly switch, star, and jump to panes with customizable keyboard shortcuts
 * [zellij-playbooks](https://github.com/yaroslavborbat/zellij-playbooks) browse, select, and execute commands from playbook files directly in the terminal
+* [zellij-qr-share](https://github.com/dbachelder/zellij-qr-share) show a web token as a QR code in the terminal for fast mobile authentication in the web UI.
 * [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [zellij-what-time](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
