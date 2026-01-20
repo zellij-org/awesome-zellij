@@ -137,6 +137,13 @@
           "category": "Navigation"
         },
         {
+          "name": "zellij-load",
+          "url": "https://github.com/Christian-Prather/zellij-load",
+          "description": "show system resources such as CPU, memory and GPU usage",
+          "stars": 2,
+          "category": "Status Bar"
+        },
+        {
           "name": "zellij-newtab-plus",
           "url": "https://github.com/AlexZasorin/zellij-newtab-plus",
           "description": "create named tabs and navigate using zoxide in one keybind",
@@ -162,6 +169,13 @@
           "url": "https://github.com/yaroslavborbat/zellij-playbooks",
           "description": "browse, select, and execute commands from playbook files directly in the terminal",
           "stars": 14,
+          "category": "Utilities"
+        },
+        {
+          "name": "zellij-qr-share",
+          "url": "https://github.com/dbachelder/zellij-qr-share",
+          "description": "show a web token as a QR code in the terminal for fast mobile authentication in the web UI",
+          "stars": 2,
           "category": "Utilities"
         },
         {

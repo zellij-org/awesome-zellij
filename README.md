@@ -37,6 +37,7 @@ Last updated: 2026-01-20
 | --- | --- | --- |
 | [zellij-cb](https://github.com/ndavd/zellij-cb) | 37 | a customizable compact bar for Zellij |
 | [zellij-datetime](https://github.com/h1romas4/zellij-datetime) | 45 | adds a date and time pane to your Zellij |
+| [zellij-load](https://github.com/Christian-Prather/zellij-load) | 2 | show system resources such as CPU, memory and GPU usage |
 | [zellij-what-time](https://github.com/pirafrank/zellij-what-time) | 11 | shows host system date and/or time in the status bar. Inspired by zellij-datetime |
 | [zj-status-bar](https://github.com/cristiand391/zj-status-bar) | 34 | an opinionated fork of the compact-bar plugin |
 | [zjstatus](https://github.com/dj95/zjstatus) | 830 | a configurable, themeable statusbar plugin |
@@ -68,6 +69,7 @@ Last updated: 2026-01-20
 | [multitask](https://github.com/imsnif/multitask) | 137 | a mini-CI as a Zellij plugin |
 | [zellij-bookmarks](https://github.com/yaroslavborbat/zellij-bookmarks) | 32 | manage command bookmarks and quickly insert them into the terminal |
 | [zellij-playbooks](https://github.com/yaroslavborbat/zellij-playbooks) | 14 | browse, select, and execute commands from playbook files directly in the terminal |
+| [zellij-qr-share](https://github.com/dbachelder/zellij-qr-share) | 2 | show a web token as a QR code in the terminal for fast mobile authentication in the web UI |
 | [zj-quit](https://github.com/cristiand391/zj-quit) | 41 | a friendly `quit` plugin for zellij |
 
 ## External Tools
