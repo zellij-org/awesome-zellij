@@ -10,7 +10,7 @@ Last updated: 2026-01-20
 
 ## Navigation
 
-| Project | Stars ⭐ | Description |
+| Project | ⭐ | Description |
 | --- | --- | --- |
 | [harpoon](https://github.com/Nacho114/harpoon) | 162 | quickly navigate panes (clone of nvim's harpoon) |
 | [room](https://github.com/rvcas/room) | 231 | quickly search and switch tabs 🖤 |
@@ -22,7 +22,7 @@ Last updated: 2026-01-20
 
 ## Session Management
 
-| Project | Stars ⭐ | Description |
+| Project | ⭐ | Description |
 | --- | --- | --- |
 | [zbuffers](https://github.com/Strech/zbuffers) | 18 | a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager |
 | [zellij-choose-tree](https://github.com/laperlej/zellij-choose-tree) | 39 | quickly switch between sessions, inspired by tmux choose-tree |
@@ -33,7 +33,7 @@ Last updated: 2026-01-20
 
 ## Status Bar
 
-| Project | Stars ⭐ | Description |
+| Project | ⭐ | Description |
 | --- | --- | --- |
 | [zellij-cb](https://github.com/ndavd/zellij-cb) | 37 | a customizable compact bar for Zellij |
 | [zellij-datetime](https://github.com/h1romas4/zellij-datetime) | 45 | adds a date and time pane to your Zellij |
@@ -44,7 +44,7 @@ Last updated: 2026-01-20
 
 ## UI & Modes
 
-| Project | Stars ⭐ | Description |
+| Project | ⭐ | Description |
 | --- | --- | --- |
 | [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) | 129 | Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim). |
 | [zellij-forgot](https://github.com/karimould/zellij-forgot) | 205 | swiftly present and access your keybinds (and more) |
@@ -55,14 +55,14 @@ Last updated: 2026-01-20
 
 ## Search
 
-| Project | Stars ⭐ | Description |
+| Project | ⭐ | Description |
 | --- | --- | --- |
 | [grab](https://github.com/imsnif/grab) | 16 | A fuzzy finder (files, structs, enums, functions) for Rust devs |
 | [monocle](https://github.com/imsnif/monocle) | 182 | fuzzy find of file names and contents |
 
 ## Utilities
 
-| Project | Stars ⭐ | Description |
+| Project | ⭐ | Description |
 | --- | --- | --- |
 | [ghost](https://github.com/vdbulcke/ghost) | 57 | spawn floating command terminal pane (interactive zrf) |
 | [multitask](https://github.com/imsnif/multitask) | 137 | a mini-CI as a Zellij plugin |
@@ -72,7 +72,7 @@ Last updated: 2026-01-20
 
 ## External Tools
 
-| Project | Stars ⭐ | Description |
+| Project | ⭐ | Description |
 | --- | --- | --- |
 | [gitpod.zellij](https://github.com/gitpod-samples/gitpod.zellij) | 9 | Zellij plugin for Gitpod, with .gitpod.yml tasks integration |
 | [jbz (Just Bacon Zellij)](https://github.com/nim65s/jbz) | 40 | display your just commands wrapped in bacon |
@@ -81,7 +81,7 @@ Last updated: 2026-01-20
 
 # Integrations
 
-| Project | Stars ⭐ | Description |
+| Project | ⭐ | Description |
 | --- | --- | --- |
 | [fzf-zellij](https://github.com/k-kuroguro/fzf-zellij) | 8 | Shell script to start fzf in a Zellij floating pane. |
 | [opencode-zellij-namer](https://github.com/24601/opencode-zellij-namer) | 17 | AI-powered dynamic session naming for [OpenCode](https://opencode.ai), automatically renames sessions based on project context |

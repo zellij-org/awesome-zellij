@@ -136,7 +136,7 @@ def format_stars(stars):
 
 def build_table(items):
     lines = [
-        "| Project | Stars ⭐ | Description |",
+        "| Project | ⭐ | Description |",
         "| --- | --- | --- |",
     ]
     for item in items:
