@@ -13,6 +13,15 @@ from dotenv import load_dotenv
 README_PATH = "README.md"
 DATA_PATH = "data/projects.json"
 SECTIONS = ["Plugins", "Integrations"]
+PLUGIN_CATEGORIES = [
+    "Navigation",
+    "Session Management",
+    "Status Bar",
+    "UI & Modes",
+    "Search",
+    "Utilities",
+    "External Tools",
+]
 
 
 def fetch_github_stars(owner: str, repo: str) -> int:
@@ -107,7 +116,7 @@ def load_data(lines):
     }
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as handle:
-        json.dump(data, handle, indent=2, ensure_ascii=True)
+        json.dump(data, handle, indent=2, ensure_ascii=False)
         handle.write("\n")
     return data
 
@@ -115,7 +124,7 @@ def load_data(lines):
 def save_data(data):
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as handle:
-        json.dump(data, handle, indent=2, ensure_ascii=True)
+        json.dump(data, handle, indent=2, ensure_ascii=False)
         handle.write("\n")
 
 
@@ -135,6 +144,21 @@ def build_table(items):
         lines.append(
             f"| [{item['name']}]({item['url']}) | {format_stars(item['stars'])} | {desc} |"
         )
+    return lines
+
+
+def build_categorized_tables(items):
+    """Build tables grouped by category with alphabetical sorting."""
+    lines = []
+    for category in PLUGIN_CATEGORIES:
+        cat_items = [i for i in items if i.get("category") == category]
+        if not cat_items:
+            continue
+        cat_items.sort(key=lambda x: x["name"].lower())
+        lines.append(f"## {category}")
+        lines.append("")
+        lines.extend(build_table(cat_items))
+        lines.append("")
     return lines
 
 
@@ -217,20 +241,20 @@ def main():
                 item["stars"] = existing_stars
             time.sleep(0.1)
 
-        items.sort(
-            key=lambda x: (
-                1 if x.get("stars") is None else 0,
-                -(x.get("stars") or 0),
-                x["name"].lower(),
-            )
-        )
+        # Sort alphabetically
+        items.sort(key=lambda x: x["name"].lower())
 
-        table_lines = build_table(items)
+        # Use categorized tables for Plugins, regular table for Integrations
+        if title == "Plugins":
+            table_lines = build_categorized_tables(items)
+        else:
+            table_lines = build_table(items)
+            table_lines.append("")  # Add trailing newline for non-categorized
+
         new_lines = (
             new_lines[: start_idx + 1]
             + [""]
             + table_lines
-            + [""]
             + new_lines[end_idx:]
         )
 
