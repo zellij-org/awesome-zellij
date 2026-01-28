@@ -9,14 +9,14 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [ghost](https://github.com/vdbulcke/ghost) spawn floating command terminal pane (interactive zrf)
 * [gitpod.zellij](https://github.com/gitpod-samples/gitpod.zellij) Zellij plugin for Gitpod, with .gitpod.yml tasks integration
 * [grab](https://github.com/imsnif/grab) A fuzzy finder (files, structs, enums, functions) for Rust devs
-* [harpoon](https://github.com/Nacho114/harpoon) quickly navigate panes (clone of nvim's harpoon) 
+* [harpoon](https://github.com/Nacho114/harpoon) quickly navigate panes (clone of nvim's harpoon)
 * [jbz (Just Bacon Zellij)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
 * [monocole](https://github.com/imsnif/monocle) fuzzy find of file names and contents
 * [multitask](https://github.com/imsnif/multitask) a mini-CI as a Zellij plugin
 * [room](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
 * [zbuffers](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
-* [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim). 
+* [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).
 * [zellij-bookmarks](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
 * [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
 * [zellij-choose-tree](https://github.com/laperlej/zellij-choose-tree) quickly switch between sessions, inspired by tmux choose-tree
@@ -27,6 +27,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
 * [zellij-load](https://github.com/Christian-Prather/zellij-load) show system resources such as CPU, memory and GPU usage. Similar to [tmux cpu-usage](https://github.com/dracula/tmux/blob/master/docs/CONFIG.md#cpu-usage---up)
 * [zellij-newtab-plus](https://github.com/AlexZasorin/zellij-newtab-plus) create named tabs and navigate using zoxide in one keybind
+* [zellij-notepad](https://github.com/0xble/zellij-notepad) floating notepad pane with configurable editor, position, and timestamped notes
 * [zellij-nvim-nav-plugin](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
 * [zellij-pane-picker](https://github.com/shihanng/zellij-pane-picker) quickly switch, star, and jump to panes with customizable keyboard shortcuts
 * [zellij-playbooks](https://github.com/yaroslavborbat/zellij-playbooks) browse, select, and execute commands from playbook files directly in the terminal
@@ -38,7 +39,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-workspace](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
 * [zj-docker](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
 * [zj-status-bar](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
-* [zj-quit](https://github.com/cristiand391/zj-quit) a friendly `quit` plugin for zellij 
+* [zj-quit](https://github.com/cristiand391/zj-quit) a friendly `quit` plugin for zellij
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 * [zjstatus](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 * [zjstatus-hints](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
@@ -60,15 +61,18 @@ All the resources listed are community-driven: we cannot offer support but sugge
 # Tutorials
 
 ## Basics
+
 * [Zellij basic functionality](https://zellij.dev/tutorials/basic-functionality/)
 * [Using and creating Layouts](https://zellij.dev/tutorials/layouts/)
 
 ## Plugins
+
 * [A comprehensive walkthrough on developing Zellij plugins](https://github.com/Kangaxx-0/first-zellij-plugin)
 * [Learnings from developing a zellij plugin](https://blog.nerd.rocks/posts/profiling-zellij-plugins/) an informative blog post from the creator of [zjstatus](https://github.com/dj95/zjstatus)
 * [Developing WebAssembly Rust plugins for Zellij](https://www.youtube.com/watch?v=pgNIcQ8rTXk) Aram Drevekenin's talk at RustLab 2023
 * [How to use Zellij Switch plugin](https://mostafaqanbaryan.com/zellij-attach-plugin/) a blog post about using fzf and zoxide with zellij-switch
 
 ## Documentation and support
+
 * [The zellij docs](https://zellij.dev/documentation/introduction)
 * and of course the zellij [Discord](https://discord.com/invite/CrUAFH3) and [Matrix](https://matrix.to/#/#zellij_general:matrix.org) for questions, support and discussions
