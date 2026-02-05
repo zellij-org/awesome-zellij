@@ -35,6 +35,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [zellij-tab-bar-indexed](https://github.com/ivoronin/zellij-tab-bar-indexed) a tab-bar plugin that adds numeric indices to tabs for quick navigation
+* [zellij-vertical-tabs](https://github.com/cfal/zellij-vertical-tabs) a plugin that displays tabs vertically as rows
 * [zellij-what-time](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
 * [zellij-workspace](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
 * [zj-docker](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
