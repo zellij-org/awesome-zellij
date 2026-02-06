@@ -1,0 +1,8 @@
+[project]
+name = "awesome-zellij"
+version = "0.1.0"
+description = "Tools for maintaining the awesome-zellij README"
+requires-python = ">=3.9"
+dependencies = [
+    "python-dotenv>=1.0.1",
+]
