@@ -48,6 +48,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjswitcher](https://github.com/WingsZeng/zjswitcher) automatically switch between normal mode and locked mode
 * [zj-git-branch](https://github.com/dam4rus/zj-git-branch) Manage git branches
 * [zsm](https://github.com/liam-mackie/zsm) A zoxide-integrated session switcher with support for default layouts
+* [zellijira](https://github.com/dam4rus/zellijira) Manage sessions around on Jira issues.
 
 # Integrations
 
