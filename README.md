@@ -16,6 +16,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [room](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
 * [zbuffers](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
+* [zellaude](https://github.com/ishefi/zellaude) a status bar plugin that shows Claude Code activity indicators on tabs
 * [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).
 * [zellij-bookmarks](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
 * [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
