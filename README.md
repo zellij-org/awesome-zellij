@@ -19,13 +19,10 @@ All the resources listed are community-driven: we cannot offer support but sugge
 ## Session Management
 
 * [zbuffers](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
-<<<<<<< add-zellij-attention
 * [zellij-attention](https://github.com/KiryuuLight/zellij-attention) add notification icons to tab names when panes need attention, designed for Claude Code
 * [zellij-autolock](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).
 * [zellij-bookmarks](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
 * [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
-=======
->>>>>>> main
 * [zellij-choose-tree](https://github.com/laperlej/zellij-choose-tree) quickly switch between sessions, inspired by tmux choose-tree
 * [zellij-favs](https://github.com/JoseMM2002/zellij-favs) adds a way to save favorites sessions and flush the others
 * [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
