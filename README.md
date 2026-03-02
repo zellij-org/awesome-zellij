@@ -76,6 +76,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellijira](https://github.com/dam4rus/zellijira) Manage sessions around on Jira issues
 * [zj-docker](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
 * [zj-git-branch](https://github.com/dam4rus/zj-git-branch) Manage git branches
+* [zellij-theme-configurator](https://rosmur.github.io/zellij-theme-configurator/) A web GUI for creating and exporting Zellij themes
 
 # Integrations
 
