@@ -35,6 +35,11 @@ from update_readme_stars_utils import (
 SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS = 0.1
 
 
+def print_progress_message(progress_message: str) -> None:
+    """Print progress to stderr so users can see long-running activity."""
+    print(f"[update_readme_stars] {progress_message}", file=sys.stderr)
+
+
 def read_markdown_file_lines(markdown_file_path: str) -> list[str]:
     """Read markdown file content and return split lines without newline suffixes."""
     with open(markdown_file_path, "r", encoding="utf-8") as markdown_handle:
@@ -58,8 +63,29 @@ def collect_tracked_sections_present_in_readme(readme_lines: list[str]) -> list[
     return tracked_sections_present_in_readme
 
 
+def count_github_repository_entries_in_tracked_sections(
+    project_data_document: dict[str, Any],
+) -> int:
+    """Count GitHub-linked entries that will trigger API requests."""
+    total_github_repository_entries = 0
+
+    for section_record in project_data_document.get("sections", []):
+        section_title = section_record.get("title")
+        if section_title not in TRACKED_README_SECTIONS:
+            continue
+
+        section_project_entries = section_record.get("items", [])
+        for project_entry in section_project_entries:
+            project_url = project_entry.get("url", "")
+            if get_github_repository_identifier_from_url(project_url):
+                total_github_repository_entries += 1
+
+    return total_github_repository_entries
+
+
 def refresh_project_stars_and_collect_missing_repositories(
     project_data_document: dict[str, Any],
+    total_github_repository_entries: int,
 ) -> list[dict[str, str]]:
     """Update star counts in-place and collect entries whose repos are gone.
 
@@ -68,6 +94,7 @@ def refresh_project_stars_and_collect_missing_repositories(
     - Any other fetch issue: warning printed, existing stars preserved.
     """
     missing_repository_entries: list[dict[str, str]] = []
+    processed_github_repository_entries = 0
 
     for section_record in project_data_document.get("sections", []):
         section_title = section_record.get("title")
@@ -77,6 +104,11 @@ def refresh_project_stars_and_collect_missing_repositories(
         section_project_entries = section_record.get("items", [])
         if not section_project_entries:
             continue
+
+        print_progress_message(
+            f"Refreshing section '{section_title}' "
+            f"({len(section_project_entries)} entries)."
+        )
 
         for project_entry in section_project_entries:
             previous_stargazer_count = project_entry.get("stars")
@@ -89,6 +121,12 @@ def refresh_project_stars_and_collect_missing_repositories(
                 continue
 
             repository_owner, repository_name = repository_identifier
+            processed_github_repository_entries += 1
+            print_progress_message(
+                "Fetching stars "
+                f"{processed_github_repository_entries}/{total_github_repository_entries}: "
+                f"{repository_owner}/{repository_name}"
+            )
             try:
                 project_entry["stars"] = fetch_github_stargazer_count(
                     repository_owner,
@@ -114,6 +152,10 @@ def refresh_project_stars_and_collect_missing_repositories(
 
             time.sleep(SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS)
 
+    print_progress_message(
+        "Completed star refresh "
+        f"for {processed_github_repository_entries} GitHub repositories."
+    )
     return missing_repository_entries
 
 
@@ -186,9 +228,11 @@ def render_updated_readme_lines(
 
 def main() -> int:
     """Execute the full README star-update flow."""
+    print_progress_message("Starting README star update run.")
     load_dotenv()
 
     # Stage 1: Load source markdown and ensure required sections exist.
+    print_progress_message("Stage 1/4: loading README and validating tracked sections.")
     readme_lines = read_markdown_file_lines(README_MARKDOWN_PATH)
     tracked_sections_present_in_readme = collect_tracked_sections_present_in_readme(
         readme_lines
@@ -198,24 +242,35 @@ def main() -> int:
         return 1
 
     # Stage 2: Load cached project data, then refresh stars from GitHub.
+    print_progress_message("Stage 2/4: loading project data and refreshing stars.")
     project_data_document = load_or_initialize_project_data(
         readme_lines,
         PROJECT_DATA_JSON_PATH,
         TRACKED_README_SECTIONS,
     )
-    missing_repository_entries = refresh_project_stars_and_collect_missing_repositories(
+    total_github_repository_entries = count_github_repository_entries_in_tracked_sections(
         project_data_document
+    )
+    print_progress_message(
+        f"Found {total_github_repository_entries} GitHub repositories to refresh."
+    )
+    missing_repository_entries = refresh_project_stars_and_collect_missing_repositories(
+        project_data_document,
+        total_github_repository_entries,
     )
 
     # Stage 3: Stop early when links are stale, so maintainers can fix entries.
+    print_progress_message("Stage 3/4: validating repository health.")
     if missing_repository_entries:
         print_missing_repository_report(missing_repository_entries)
         return 1
 
     # Stage 4: Render README sections and persist both README + JSON cache.
+    print_progress_message("Stage 4/4: rendering README and writing output files.")
     updated_readme_lines = render_updated_readme_lines(readme_lines, project_data_document)
     write_markdown_file_lines(README_MARKDOWN_PATH, updated_readme_lines)
     write_json_document_to_file(project_data_document, PROJECT_DATA_JSON_PATH)
+    print_progress_message("README star update completed successfully.")
 
     return 0
 
