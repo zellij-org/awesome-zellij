@@ -1,268 +1,221 @@
 #!/usr/bin/env python3
-import json
-import os
-import re
+"""Main flow for updating README project stars.
+
+The orchestration in this file intentionally reads like a checklist:
+1) load inputs, 2) refresh star data, 3) render markdown, 4) write outputs.
+"""
+
+from __future__ import annotations
+
 import sys
 import time
 from datetime import datetime, timezone
-from urllib.parse import urlparse
-from urllib.request import Request, urlopen
+from typing import Any
 
 from dotenv import load_dotenv
 
-README_PATH = "README.md"
-DATA_PATH = "data/projects.json"
-SECTIONS = ["Plugins", "Integrations"]
-PLUGIN_CATEGORIES = [
-    "Navigation",
-    "Session Management",
-    "Status Bar",
-    "UI & Modes",
-    "Search",
-    "Utilities",
-    "External Tools",
-]
+from update_readme_stars_utils import (
+    PLUGIN_CATEGORY_HEADINGS,
+    PROJECT_DATA_JSON_PATH,
+    README_MARKDOWN_PATH,
+    TRACKED_README_SECTIONS,
+    RepoNotFoundError,
+    build_categorized_plugin_markdown_tables,
+    build_standard_project_markdown_table,
+    fetch_github_stargazer_count,
+    find_top_level_section_line_range,
+    get_github_repository_identifier_from_url,
+    load_or_initialize_project_data,
+    replace_or_insert_last_updated_line,
+    sort_project_entries_by_name,
+    write_json_document_to_file,
+)
+
+# Keep a small pause between API calls to avoid hammering GitHub.
+SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS = 0.1
 
 
-def fetch_github_stars(owner: str, repo: str) -> int:
-    url = f"https://api.github.com/repos/{owner}/{repo}"
-    headers = {"User-Agent": "awesome-zellij-star-updater"}
-    token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-    req = Request(url, headers=headers)
-    with urlopen(req, timeout=20) as resp:
-        data = json.load(resp)
-    return int(data.get("stargazers_count", 0))
+def read_markdown_file_lines(markdown_file_path: str) -> list[str]:
+    """Read markdown file content and return split lines without newline suffixes."""
+    with open(markdown_file_path, "r", encoding="utf-8") as markdown_handle:
+        return markdown_handle.read().splitlines()
 
 
-def parse_repo(url: str):
-    parsed = urlparse(url)
-    if parsed.netloc.lower() != "github.com":
-        return None
-    parts = parsed.path.strip("/").split("/")
-    if len(parts) < 2:
-        return None
-    owner, repo = parts[0], parts[1]
-    repo = repo.removesuffix(".git")
-    return owner, repo
+def write_markdown_file_lines(markdown_file_path: str, markdown_lines: list[str]) -> None:
+    """Write markdown lines back to disk with a trailing newline."""
+    with open(markdown_file_path, "w", encoding="utf-8") as markdown_handle:
+        markdown_handle.write("\n".join(markdown_lines) + "\n")
 
 
-def parse_readme_sections(lines):
-    sections = {}
-    current = None
-    for line in lines:
-        if line.startswith("# "):
-            title = line[2:].strip()
-            current = title
-            if current in SECTIONS:
-                sections.setdefault(current, [])
+def collect_tracked_sections_present_in_readme(readme_lines: list[str]) -> list[str]:
+    """Return tracked top-level sections that currently exist in README."""
+    tracked_sections_present_in_readme: list[str] = []
+
+    for tracked_section_title in TRACKED_README_SECTIONS:
+        if find_top_level_section_line_range(readme_lines, tracked_section_title):
+            tracked_sections_present_in_readme.append(tracked_section_title)
+
+    return tracked_sections_present_in_readme
+
+
+def refresh_project_stars_and_collect_missing_repositories(
+    project_data_document: dict[str, Any],
+) -> list[dict[str, str]]:
+    """Update star counts in-place and collect entries whose repos are gone.
+
+    Behavior:
+    - Missing GitHub repository (404): captured in the returned list.
+    - Any other fetch issue: warning printed, existing stars preserved.
+    """
+    missing_repository_entries: list[dict[str, str]] = []
+
+    for section_record in project_data_document.get("sections", []):
+        section_title = section_record.get("title")
+        if section_title not in TRACKED_README_SECTIONS:
             continue
-        if current not in SECTIONS:
+
+        section_project_entries = section_record.get("items", [])
+        if not section_project_entries:
             continue
 
-        if line.startswith("*"):
-            match = re.match(r"^\* \[(.+?)\]\((.+?)\)\s*(.*)$", line)
-            if not match:
+        for project_entry in section_project_entries:
+            previous_stargazer_count = project_entry.get("stars")
+            project_url = project_entry.get("url", "")
+            repository_identifier = get_github_repository_identifier_from_url(project_url)
+
+            # Only GitHub repositories expose stars in the way this script expects.
+            if not repository_identifier:
+                project_entry["stars"] = previous_stargazer_count
                 continue
-            name, url, desc = match.groups()
-            sections[current].append(
-                {
-                    "name": name,
-                    "url": url,
-                    "description": desc.strip(),
-                    "stars": None,
-                }
-            )
-            continue
 
-        if line.startswith("|") and "[" in line and "](" in line:
-            match = re.match(
-                r"^\|\s*\[(.+?)\]\((.+?)\)\s*\|\s*([^|]*?)\s*\|\s*(.*?)\s*\|\s*$",
-                line,
-            )
-            if not match:
-                continue
-            name, url, stars_text, desc = match.groups()
-            stars_text = stars_text.strip()
-            stars = None
-            if stars_text and stars_text.upper() != "N/A":
-                try:
-                    stars = int(stars_text.replace(",", ""))
-                except ValueError:
-                    stars = None
-            sections[current].append(
-                {
-                    "name": name,
-                    "url": url,
-                    "description": desc.strip(),
-                    "stars": stars,
-                }
-            )
-    return sections
+            repository_owner, repository_name = repository_identifier
+            try:
+                project_entry["stars"] = fetch_github_stargazer_count(
+                    repository_owner,
+                    repository_name,
+                )
+            except RepoNotFoundError:
+                missing_repository_entries.append(
+                    {
+                        "section": str(section_title),
+                        "name": str(project_entry.get("name", "Unknown project")),
+                        "repo": f"{repository_owner}/{repository_name}",
+                        "url": project_url,
+                    }
+                )
+                project_entry["stars"] = previous_stargazer_count
+            except Exception as unexpected_error:
+                print(
+                    "Failed to fetch stars for "
+                    f"{repository_owner}/{repository_name}: {unexpected_error}",
+                    file=sys.stderr,
+                )
+                project_entry["stars"] = previous_stargazer_count
+
+            time.sleep(SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS)
+
+    return missing_repository_entries
 
 
-def load_data(lines):
-    if os.path.exists(DATA_PATH):
-        with open(DATA_PATH, "r", encoding="utf-8") as handle:
-            return json.load(handle)
+def print_missing_repository_report(missing_repository_entries: list[dict[str, str]]) -> None:
+    """Print a clear action list for projects whose GitHub repositories are gone."""
+    print(
+        "One or more GitHub repositories were not found. "
+        "Please update or remove these entries:",
+        file=sys.stderr,
+    )
 
-    sections = parse_readme_sections(lines)
-    data = {
-        "sections": [
-            {"title": title, "items": sections.get(title, [])}
-            for title in SECTIONS
-        ]
-    }
-    os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
-    with open(DATA_PATH, "w", encoding="utf-8") as handle:
-        json.dump(data, handle, indent=2, ensure_ascii=False)
-        handle.write("\n")
-    return data
-
-
-def save_data(data):
-    os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
-    with open(DATA_PATH, "w", encoding="utf-8") as handle:
-        json.dump(data, handle, indent=2, ensure_ascii=False)
-        handle.write("\n")
-
-
-def format_stars(stars):
-    if stars is None:
-        return "N/A"
-    return f"{stars:,}"
-
-
-def build_table(items):
-    lines = [
-        "| Project | ⭐ | Description |",
-        "| --- | --- | --- |",
-    ]
-    for item in items:
-        desc = item["description"].replace("|", "\\|")
-        lines.append(
-            f"| [{item['name']}]({item['url']}) | {format_stars(item['stars'])} | {desc} |"
+    for missing_repository_entry in missing_repository_entries:
+        print(
+            f"- [{missing_repository_entry['section']}] "
+            f"{missing_repository_entry['name']} "
+            f"({missing_repository_entry['repo']}) -> "
+            f"{missing_repository_entry['url']}",
+            file=sys.stderr,
         )
-    return lines
 
 
-def build_categorized_tables(items):
-    """Build tables grouped by category with alphabetical sorting."""
-    lines = []
-    for category in PLUGIN_CATEGORIES:
-        cat_items = [i for i in items if i.get("category") == category]
-        if not cat_items:
+def render_updated_readme_lines(
+    original_readme_lines: list[str],
+    project_data_document: dict[str, Any],
+) -> list[str]:
+    """Render tracked sections from project data and return full README lines."""
+    updated_readme_lines = original_readme_lines[:]
+
+    for section_record in project_data_document.get("sections", []):
+        section_title = section_record.get("title")
+        if section_title not in TRACKED_README_SECTIONS:
             continue
-        cat_items.sort(key=lambda x: x["name"].lower())
-        lines.append(f"## {category}")
-        lines.append("")
-        lines.extend(build_table(cat_items))
-        lines.append("")
-    return lines
+
+        section_line_range = find_top_level_section_line_range(
+            updated_readme_lines,
+            section_title,
+        )
+        if not section_line_range:
+            continue
+        section_start_line_index, section_end_line_index = section_line_range
+
+        section_project_entries = section_record.get("items", [])
+        if not section_project_entries:
+            continue
+
+        # Keep list output deterministic so diffs remain easy to review.
+        sort_project_entries_by_name(section_project_entries)
+
+        if section_title == "Plugins":
+            rendered_section_lines = build_categorized_plugin_markdown_tables(
+                section_project_entries,
+                PLUGIN_CATEGORY_HEADINGS,
+            )
+        else:
+            rendered_section_lines = build_standard_project_markdown_table(
+                section_project_entries,
+            )
+            rendered_section_lines.append("")
+
+        updated_readme_lines = (
+            updated_readme_lines[: section_start_line_index + 1]
+            + [""]
+            + rendered_section_lines
+            + updated_readme_lines[section_end_line_index:]
+        )
+
+    utc_date_stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    return replace_or_insert_last_updated_line(updated_readme_lines, utc_date_stamp)
 
 
-def update_timestamp(lines, timestamp):
-    target = "Last updated:"
-    for idx, line in enumerate(lines):
-        if line.startswith(target):
-            lines[idx] = f"{target} {timestamp}"
-            return lines
-
-    anchor = "All the resources listed are community-driven:"
-    for idx, line in enumerate(lines):
-        if line.startswith(anchor):
-            insert_at = idx + 1
-            lines[insert_at:insert_at] = ["", f"{target} {timestamp}"]
-            return lines
-
-    lines.insert(0, f"{target} {timestamp}")
-    lines.insert(1, "")
-    return lines
-
-
-def main():
+def main() -> int:
+    """Execute the full README star-update flow."""
     load_dotenv()
-    with open(README_PATH, "r", encoding="utf-8") as f:
-        lines = f.read().splitlines()
 
-    def find_section_range(current_lines, title):
-        start_idx = None
-        for idx, line in enumerate(current_lines):
-            if line.startswith("# ") and line[2:].strip() == title:
-                start_idx = idx
-                break
-        if start_idx is None:
-            return None
-        end_idx = len(current_lines)
-        for idx in range(start_idx + 1, len(current_lines)):
-            if current_lines[idx].startswith("# "):
-                end_idx = idx
-                break
-        return start_idx, end_idx
-
-    found_sections = [
-        section for section in SECTIONS if find_section_range(lines, section)
-    ]
-    if not found_sections:
+    # Stage 1: Load source markdown and ensure required sections exist.
+    readme_lines = read_markdown_file_lines(README_MARKDOWN_PATH)
+    tracked_sections_present_in_readme = collect_tracked_sections_present_in_readme(
+        readme_lines
+    )
+    if not tracked_sections_present_in_readme:
         print("No matching sections found.", file=sys.stderr)
         return 1
 
-    data = load_data(lines)
-    new_lines = lines[:]
+    # Stage 2: Load cached project data, then refresh stars from GitHub.
+    project_data_document = load_or_initialize_project_data(
+        readme_lines,
+        PROJECT_DATA_JSON_PATH,
+        TRACKED_README_SECTIONS,
+    )
+    missing_repository_entries = refresh_project_stars_and_collect_missing_repositories(
+        project_data_document
+    )
 
-    for section in data.get("sections", []):
-        title = section.get("title")
-        if title not in SECTIONS:
-            continue
-        section_range = find_section_range(new_lines, title)
-        if not section_range:
-            continue
-        start_idx, end_idx = section_range
+    # Stage 3: Stop early when links are stale, so maintainers can fix entries.
+    if missing_repository_entries:
+        print_missing_repository_report(missing_repository_entries)
+        return 1
 
-        items = section.get("items", [])
-        if not items:
-            continue
-
-        for item in items:
-            existing_stars = item.get("stars")
-            repo = parse_repo(item["url"])
-            if not repo:
-                item["stars"] = existing_stars
-                continue
-            owner, repo_name = repo
-            try:
-                item["stars"] = fetch_github_stars(owner, repo_name)
-            except Exception as exc:
-                print(
-                    f"Failed to fetch stars for {owner}/{repo_name}: {exc}",
-                    file=sys.stderr,
-                )
-                item["stars"] = existing_stars
-            time.sleep(0.1)
-
-        # Sort alphabetically
-        items.sort(key=lambda x: x["name"].lower())
-
-        # Use categorized tables for Plugins, regular table for Integrations
-        if title == "Plugins":
-            table_lines = build_categorized_tables(items)
-        else:
-            table_lines = build_table(items)
-            table_lines.append("")  # Add trailing newline for non-categorized
-
-        new_lines = (
-            new_lines[: start_idx + 1]
-            + [""]
-            + table_lines
-            + new_lines[end_idx:]
-        )
-
-    with open(README_PATH, "w", encoding="utf-8") as f:
-        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-        new_lines = update_timestamp(new_lines, timestamp)
-        f.write("\n".join(new_lines) + "\n")
-    save_data(data)
+    # Stage 4: Render README sections and persist both README + JSON cache.
+    updated_readme_lines = render_updated_readme_lines(readme_lines, project_data_document)
+    write_markdown_file_lines(README_MARKDOWN_PATH, updated_readme_lines)
+    write_json_document_to_file(project_data_document, PROJECT_DATA_JSON_PATH)
 
     return 0
 
