@@ -7,12 +7,26 @@ The orchestration in this file intentionally reads like a checklist:
 
 from __future__ import annotations
 
+import os
 import sys
 import time
 from datetime import datetime, timezone
 from typing import Any
 
 from dotenv import load_dotenv
+try:
+    from rich.console import Console
+    from rich.progress import (
+        BarColumn,
+        Progress,
+        SpinnerColumn,
+        TaskProgressColumn,
+        TextColumn,
+        TimeElapsedColumn,
+    )
+except ImportError:
+    Console = None  # type: ignore[assignment]
+    Progress = None  # type: ignore[assignment]
 
 from update_readme_stars_utils import (
     PLUGIN_CATEGORY_HEADINGS,
@@ -38,6 +52,83 @@ SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS = 0.1
 def print_progress_message(progress_message: str) -> None:
     """Print progress to stderr so users can see long-running activity."""
     print(f"[update_readme_stars] {progress_message}", file=sys.stderr)
+
+
+def should_use_rich_progress_bar() -> bool:
+    """Enable rich progress only when it is available and output is interactive."""
+    if Progress is None or Console is None:
+        return False
+    if not sys.stderr.isatty():
+        return False
+    if os.getenv("CI", "").strip().lower() in {"1", "true", "yes"}:
+        return False
+    return True
+
+
+class RepositoryRefreshProgressTracker:
+    """Show per-repository progress with rich when available, else plain logs."""
+
+    def __init__(self, total_repository_count: int) -> None:
+        self.total_repository_count = total_repository_count
+        self.completed_repository_count = 0
+        self.use_rich_progress_bar = (
+            total_repository_count > 0 and should_use_rich_progress_bar()
+        )
+        self.rich_console: Any | None = None
+        self.rich_progress: Any | None = None
+        self.rich_task_identifier: Any | None = None
+
+    def start(self) -> None:
+        """Initialize the rich progress display if enabled."""
+        if not self.use_rich_progress_bar:
+            return
+        self.rich_console = Console(stderr=True)
+        self.rich_progress = Progress(
+            SpinnerColumn(),
+            TextColumn("{task.description}"),
+            BarColumn(),
+            TaskProgressColumn(),
+            TimeElapsedColumn(),
+            console=self.rich_console,
+            transient=False,
+        )
+        self.rich_progress.start()
+        self.rich_task_identifier = self.rich_progress.add_task(
+            "Fetching GitHub stars...",
+            total=self.total_repository_count,
+        )
+
+    def record_repository_fetch(self, repository_owner: str, repository_name: str) -> None:
+        """Advance progress for one repository fetch attempt."""
+        self.completed_repository_count += 1
+        repository_display_name = f"{repository_owner}/{repository_name}"
+
+        if self.use_rich_progress_bar and self.rich_progress is not None:
+            self.rich_progress.update(
+                self.rich_task_identifier,
+                advance=1,
+                description=(
+                    f"Fetching stars {self.completed_repository_count}/"
+                    f"{self.total_repository_count}: {repository_display_name}"
+                ),
+            )
+            return
+
+        print_progress_message(
+            "Fetching stars "
+            f"{self.completed_repository_count}/{self.total_repository_count}: "
+            f"{repository_display_name}"
+        )
+
+    def finish(self) -> None:
+        """Close rich progress display and emit a final completion line."""
+        if self.use_rich_progress_bar and self.rich_progress is not None:
+            self.rich_progress.stop()
+
+        print_progress_message(
+            "Completed star refresh "
+            f"for {self.completed_repository_count} GitHub repositories."
+        )
 
 
 def read_markdown_file_lines(markdown_file_path: str) -> list[str]:
@@ -94,68 +185,62 @@ def refresh_project_stars_and_collect_missing_repositories(
     - Any other fetch issue: warning printed, existing stars preserved.
     """
     missing_repository_entries: list[dict[str, str]] = []
-    processed_github_repository_entries = 0
+    progress_tracker = RepositoryRefreshProgressTracker(total_github_repository_entries)
+    progress_tracker.start()
 
-    for section_record in project_data_document.get("sections", []):
-        section_title = section_record.get("title")
-        if section_title not in TRACKED_README_SECTIONS:
-            continue
-
-        section_project_entries = section_record.get("items", [])
-        if not section_project_entries:
-            continue
-
-        print_progress_message(
-            f"Refreshing section '{section_title}' "
-            f"({len(section_project_entries)} entries)."
-        )
-
-        for project_entry in section_project_entries:
-            previous_stargazer_count = project_entry.get("stars")
-            project_url = project_entry.get("url", "")
-            repository_identifier = get_github_repository_identifier_from_url(project_url)
-
-            # Only GitHub repositories expose stars in the way this script expects.
-            if not repository_identifier:
-                project_entry["stars"] = previous_stargazer_count
+    try:
+        for section_record in project_data_document.get("sections", []):
+            section_title = section_record.get("title")
+            if section_title not in TRACKED_README_SECTIONS:
                 continue
 
-            repository_owner, repository_name = repository_identifier
-            processed_github_repository_entries += 1
+            section_project_entries = section_record.get("items", [])
+            if not section_project_entries:
+                continue
+
             print_progress_message(
-                "Fetching stars "
-                f"{processed_github_repository_entries}/{total_github_repository_entries}: "
-                f"{repository_owner}/{repository_name}"
+                f"Refreshing section '{section_title}' "
+                f"({len(section_project_entries)} entries)."
             )
-            try:
-                project_entry["stars"] = fetch_github_stargazer_count(
-                    repository_owner,
-                    repository_name,
-                )
-            except RepoNotFoundError:
-                missing_repository_entries.append(
-                    {
-                        "section": str(section_title),
-                        "name": str(project_entry.get("name", "Unknown project")),
-                        "repo": f"{repository_owner}/{repository_name}",
-                        "url": project_url,
-                    }
-                )
-                project_entry["stars"] = previous_stargazer_count
-            except Exception as unexpected_error:
-                print(
-                    "Failed to fetch stars for "
-                    f"{repository_owner}/{repository_name}: {unexpected_error}",
-                    file=sys.stderr,
-                )
-                project_entry["stars"] = previous_stargazer_count
 
-            time.sleep(SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS)
+            for project_entry in section_project_entries:
+                previous_stargazer_count = project_entry.get("stars")
+                project_url = project_entry.get("url", "")
+                repository_identifier = get_github_repository_identifier_from_url(project_url)
 
-    print_progress_message(
-        "Completed star refresh "
-        f"for {processed_github_repository_entries} GitHub repositories."
-    )
+                # Only GitHub repositories expose stars in the way this script expects.
+                if not repository_identifier:
+                    project_entry["stars"] = previous_stargazer_count
+                    continue
+
+                repository_owner, repository_name = repository_identifier
+                progress_tracker.record_repository_fetch(repository_owner, repository_name)
+                try:
+                    project_entry["stars"] = fetch_github_stargazer_count(
+                        repository_owner,
+                        repository_name,
+                    )
+                except RepoNotFoundError:
+                    missing_repository_entries.append(
+                        {
+                            "section": str(section_title),
+                            "name": str(project_entry.get("name", "Unknown project")),
+                            "repo": f"{repository_owner}/{repository_name}",
+                            "url": project_url,
+                        }
+                    )
+                    project_entry["stars"] = previous_stargazer_count
+                except Exception as unexpected_error:
+                    print(
+                        "Failed to fetch stars for "
+                        f"{repository_owner}/{repository_name}: {unexpected_error}",
+                        file=sys.stderr,
+                    )
+                    project_entry["stars"] = previous_stargazer_count
+
+                time.sleep(SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS)
+    finally:
+        progress_tracker.finish()
     return missing_repository_entries
 
 
