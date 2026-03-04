@@ -6,6 +6,35 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 Last updated: 2026-03-04
 
+## Maintainer flows
+
+All project entries should be edited in `data/projects.json`.
+
+Use one explicit flow when running the maintenance script:
+
+```bash
+# Full maintainer flow: refresh stars via GitHub API, then render README + timestamp.
+# Token recommended to avoid API rate limits: set GITHUB_TOKEN or GH_TOKEN.
+uv run scripts/update_readme_stars.py sync
+
+# Maintainer/bot flow: refresh stars only (updates data/projects.json).
+# Token recommended to avoid API rate limits: set GITHUB_TOKEN or GH_TOKEN.
+uv run scripts/update_readme_stars.py refresh-stars
+
+# Contributor-friendly flow: render README from data only (no API calls, no token needed).
+uv run scripts/update_readme_stars.py render
+```
+
+Token setup (for `sync` / `refresh-stars`):
+
+```bash
+# temporary for current shell
+export GITHUB_TOKEN=ghp_your_token_here
+
+# or store in .env (script also accepts GH_TOKEN)
+echo "GITHUB_TOKEN=ghp_your_token_here" >> .env
+```
+
 # Plugins
 
 ## Navigation

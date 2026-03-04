@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Main flow for updating README project stars.
+"""Maintain project data and README tables for awesome-zellij.
 
-The orchestration in this file intentionally reads like a checklist:
-1) load inputs, 2) refresh star data, 3) render markdown, 4) write outputs.
+This script exposes explicit flows:
+- `sync`: refresh stars + render README + persist JSON
+- `refresh-stars`: refresh stars in `data/projects.json` only
+- `render`: render README from `data/projects.json` without API calls
 """
 
 from __future__ import annotations
 
+import argparse
 import os
 import sys
 import time
@@ -14,6 +17,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from dotenv import load_dotenv
+
 try:
     from rich.console import Console
     from rich.progress import (
@@ -49,9 +53,48 @@ from update_readme_stars_utils import (
 SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS = 0.1
 
 
+class CommandNames:
+    """Named commands for the script CLI."""
+
+    SYNC = "sync"
+    REFRESH_STARS = "refresh-stars"
+    RENDER = "render"
+
+
 def print_progress_message(progress_message: str) -> None:
     """Print progress to stderr so users can see long-running activity."""
     print(f"[update_readme_stars] {progress_message}", file=sys.stderr)
+
+
+def parse_command_line_arguments() -> argparse.Namespace:
+    """Parse CLI args and require explicit command selection."""
+    argument_parser = argparse.ArgumentParser(
+        description=(
+            "Maintain awesome-zellij project data and README tables. "
+            "Choose an explicit flow command."
+        )
+    )
+
+    command_subparsers = argument_parser.add_subparsers(
+        dest="command_name",
+        required=True,
+    )
+
+    command_subparsers.add_parser(
+        CommandNames.SYNC,
+        help="Refresh stars, then render README and write data/README.",
+    )
+    command_subparsers.add_parser(
+        CommandNames.REFRESH_STARS,
+        help="Refresh GitHub stars and write only data/projects.json.",
+    )
+
+    command_subparsers.add_parser(
+        CommandNames.RENDER,
+        help="Render README from data/projects.json with no network calls.",
+    )
+
+    return argument_parser.parse_args()
 
 
 def should_use_rich_progress_bar() -> bool:
@@ -82,6 +125,7 @@ class RepositoryRefreshProgressTracker:
         """Initialize the rich progress display if enabled."""
         if not self.use_rich_progress_bar:
             return
+
         self.rich_console = Console(stderr=True)
         self.rich_progress = Progress(
             SpinnerColumn(),
@@ -154,18 +198,45 @@ def collect_tracked_sections_present_in_readme(readme_lines: list[str]) -> list[
     return tracked_sections_present_in_readme
 
 
+def load_readme_lines_and_project_data() -> tuple[list[str], dict[str, Any]] | None:
+    """Load README + data file and fail early if tracked sections are missing."""
+    readme_lines = read_markdown_file_lines(README_MARKDOWN_PATH)
+    tracked_sections_present_in_readme = collect_tracked_sections_present_in_readme(
+        readme_lines
+    )
+    if not tracked_sections_present_in_readme:
+        print("No matching sections found.", file=sys.stderr)
+        return None
+
+    project_data_document = load_or_initialize_project_data(
+        readme_lines,
+        PROJECT_DATA_JSON_PATH,
+        TRACKED_README_SECTIONS,
+    )
+    return readme_lines, project_data_document
+
+
+def iterate_tracked_sections_with_items(
+    project_data_document: dict[str, Any],
+):
+    """Yield `(section_title, section_project_entries)` for tracked sections only."""
+    for section_record in project_data_document.get("sections", []):
+        section_title = section_record.get("title")
+        if section_title not in TRACKED_README_SECTIONS:
+            continue
+        section_project_entries = section_record.get("items", [])
+        yield section_title, section_project_entries
+
+
 def count_github_repository_entries_in_tracked_sections(
     project_data_document: dict[str, Any],
 ) -> int:
     """Count GitHub-linked entries that will trigger API requests."""
     total_github_repository_entries = 0
 
-    for section_record in project_data_document.get("sections", []):
-        section_title = section_record.get("title")
-        if section_title not in TRACKED_README_SECTIONS:
-            continue
-
-        section_project_entries = section_record.get("items", [])
+    for _, section_project_entries in iterate_tracked_sections_with_items(
+        project_data_document
+    ):
         for project_entry in section_project_entries:
             project_url = project_entry.get("url", "")
             if get_github_repository_identifier_from_url(project_url):
@@ -189,12 +260,9 @@ def refresh_project_stars_and_collect_missing_repositories(
     progress_tracker.start()
 
     try:
-        for section_record in project_data_document.get("sections", []):
-            section_title = section_record.get("title")
-            if section_title not in TRACKED_README_SECTIONS:
-                continue
-
-            section_project_entries = section_record.get("items", [])
+        for section_title, section_project_entries in iterate_tracked_sections_with_items(
+            project_data_document
+        ):
             if not section_project_entries:
                 continue
 
@@ -241,6 +309,7 @@ def refresh_project_stars_and_collect_missing_repositories(
                 time.sleep(SECONDS_TO_WAIT_BETWEEN_GITHUB_REQUESTS)
     finally:
         progress_tracker.finish()
+
     return missing_repository_entries
 
 
@@ -269,11 +338,9 @@ def render_updated_readme_lines(
     """Render tracked sections from project data and return full README lines."""
     updated_readme_lines = original_readme_lines[:]
 
-    for section_record in project_data_document.get("sections", []):
-        section_title = section_record.get("title")
-        if section_title not in TRACKED_README_SECTIONS:
-            continue
-
+    for section_title, section_project_entries in iterate_tracked_sections_with_items(
+        project_data_document
+    ):
         section_line_range = find_top_level_section_line_range(
             updated_readme_lines,
             section_title,
@@ -282,7 +349,6 @@ def render_updated_readme_lines(
             continue
         section_start_line_index, section_end_line_index = section_line_range
 
-        section_project_entries = section_record.get("items", [])
         if not section_project_entries:
             continue
 
@@ -311,28 +377,10 @@ def render_updated_readme_lines(
     return replace_or_insert_last_updated_line(updated_readme_lines, utc_date_stamp)
 
 
-def main() -> int:
-    """Execute the full README star-update flow."""
-    print_progress_message("Starting README star update run.")
-    load_dotenv()
-
-    # Stage 1: Load source markdown and ensure required sections exist.
-    print_progress_message("Stage 1/4: loading README and validating tracked sections.")
-    readme_lines = read_markdown_file_lines(README_MARKDOWN_PATH)
-    tracked_sections_present_in_readme = collect_tracked_sections_present_in_readme(
-        readme_lines
-    )
-    if not tracked_sections_present_in_readme:
-        print("No matching sections found.", file=sys.stderr)
-        return 1
-
-    # Stage 2: Load cached project data, then refresh stars from GitHub.
-    print_progress_message("Stage 2/4: loading project data and refreshing stars.")
-    project_data_document = load_or_initialize_project_data(
-        readme_lines,
-        PROJECT_DATA_JSON_PATH,
-        TRACKED_README_SECTIONS,
-    )
+def refresh_stars_and_validate_repository_links(
+    project_data_document: dict[str, Any],
+) -> bool:
+    """Refresh stars and return False after printing missing repo errors."""
     total_github_repository_entries = count_github_repository_entries_in_tracked_sections(
         project_data_document
     )
@@ -343,21 +391,101 @@ def main() -> int:
         project_data_document,
         total_github_repository_entries,
     )
-
-    # Stage 3: Stop early when links are stale, so maintainers can fix entries.
-    print_progress_message("Stage 3/4: validating repository health.")
     if missing_repository_entries:
         print_missing_repository_report(missing_repository_entries)
-        return 1
+        return False
+    return True
 
-    # Stage 4: Render README sections and persist both README + JSON cache.
-    print_progress_message("Stage 4/4: rendering README and writing output files.")
+
+def render_readme_and_write_to_disk(
+    readme_lines: list[str],
+    project_data_document: dict[str, Any],
+) -> None:
+    """Render README from project data and write it to disk."""
     updated_readme_lines = render_updated_readme_lines(readme_lines, project_data_document)
     write_markdown_file_lines(README_MARKDOWN_PATH, updated_readme_lines)
-    write_json_document_to_file(project_data_document, PROJECT_DATA_JSON_PATH)
-    print_progress_message("README star update completed successfully.")
 
+
+def run_refresh_stars_command() -> int:
+    """Refresh stars only and persist `data/projects.json`."""
+    print_progress_message("Starting flow: refresh-stars")
+    print_progress_message("Stage 1/2: loading README and project data.")
+    loaded_input = load_readme_lines_and_project_data()
+    if loaded_input is None:
+        return 1
+
+    _, project_data_document = loaded_input
+
+    print_progress_message("Stage 2/2: refreshing stars and writing project data.")
+    if not refresh_stars_and_validate_repository_links(project_data_document):
+        return 1
+
+    write_json_document_to_file(project_data_document, PROJECT_DATA_JSON_PATH)
+    print_progress_message("refresh-stars completed successfully.")
     return 0
+
+
+def run_render_command() -> int:
+    """Render README from project data and update timestamp."""
+    print_progress_message("Starting flow: render")
+    print_progress_message("Stage 1/2: loading README and project data.")
+    loaded_input = load_readme_lines_and_project_data()
+    if loaded_input is None:
+        return 1
+
+    readme_lines, project_data_document = loaded_input
+
+    print_progress_message("Stage 2/2: rendering README from project data.")
+    render_readme_and_write_to_disk(readme_lines, project_data_document)
+    print_progress_message("render completed successfully.")
+    return 0
+
+
+def run_sync_command() -> int:
+    """Refresh stars, then render README and persist both data and README."""
+    print_progress_message("Starting flow: sync")
+
+    print_progress_message("Stage 1/4: loading README and project data.")
+    loaded_input = load_readme_lines_and_project_data()
+    if loaded_input is None:
+        return 1
+    readme_lines, project_data_document = loaded_input
+
+    print_progress_message("Stage 2/4: refreshing stars from GitHub.")
+    stars_were_refreshed_successfully = refresh_stars_and_validate_repository_links(
+        project_data_document
+    )
+
+    print_progress_message("Stage 3/4: validating repository health.")
+    if not stars_were_refreshed_successfully:
+        return 1
+
+    print_progress_message("Stage 4/4: rendering README and writing output files.")
+    render_readme_and_write_to_disk(readme_lines, project_data_document)
+    write_json_document_to_file(project_data_document, PROJECT_DATA_JSON_PATH)
+    print_progress_message("sync completed successfully.")
+    return 0
+
+
+def main() -> int:
+    """Dispatch to one explicit maintenance flow."""
+    load_dotenv()
+    parsed_arguments = parse_command_line_arguments()
+
+    if parsed_arguments.command_name == CommandNames.REFRESH_STARS:
+        return run_refresh_stars_command()
+
+    if parsed_arguments.command_name == CommandNames.RENDER:
+        return run_render_command()
+
+    if parsed_arguments.command_name == CommandNames.SYNC:
+        return run_sync_command()
+
+    print(
+        f"Unknown command: {parsed_arguments.command_name}",
+        file=sys.stderr,
+    )
+    return 2
 
 
 if __name__ == "__main__":

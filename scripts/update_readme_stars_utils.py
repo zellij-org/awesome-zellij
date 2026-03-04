@@ -40,6 +40,21 @@ class RepoNotFoundError(RuntimeError):
     """Raised when GitHub confirms that a repository does not exist."""
 
 
+def build_project_entry_record(
+    entry_name: str,
+    entry_url: str,
+    entry_description: str,
+    star_count: int | None,
+) -> dict[str, Any]:
+    """Create a normalized project entry record used by README parsing logic."""
+    return {
+        "name": entry_name,
+        "url": entry_url,
+        "description": entry_description.strip(),
+        "stars": star_count,
+    }
+
+
 def fetch_github_stargazer_count(repository_owner: str, repository_name: str) -> int:
     """Fetch stargazer count from GitHub's repository API endpoint.
 
@@ -106,12 +121,12 @@ def parse_project_entries_from_readme_lines(
         if bullet_match:
             entry_name, entry_url, entry_description = bullet_match.groups()
             parsed_entries_by_section[active_section_title].append(
-                {
-                    "name": entry_name,
-                    "url": entry_url,
-                    "description": entry_description.strip(),
-                    "stars": None,
-                }
+                build_project_entry_record(
+                    entry_name,
+                    entry_url,
+                    entry_description,
+                    None,
+                )
             )
             continue
 
@@ -130,12 +145,12 @@ def parse_project_entries_from_readme_lines(
                 parsed_star_value = None
 
         parsed_entries_by_section[active_section_title].append(
-            {
-                "name": entry_name,
-                "url": entry_url,
-                "description": entry_description.strip(),
-                "stars": parsed_star_value,
-            }
+            build_project_entry_record(
+                entry_name,
+                entry_url,
+                entry_description,
+                parsed_star_value,
+            )
         )
 
     return parsed_entries_by_section
