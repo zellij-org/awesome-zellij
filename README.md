@@ -27,6 +27,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-favs](https://github.com/JoseMM2002/zellij-favs) adds a way to save favorites sessions and flush the others
 * [zellij-sessionizer](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
 * [zellij-switch](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
+* [zellij-worktree](https://github.com/sharph/zellij-worktree) A Zellij plugin for managing git worktrees
 * [zsm](https://github.com/liam-mackie/zsm) A zoxide-integrated session switcher with support for default layouts
 
 ## Status Bar 
