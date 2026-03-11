@@ -75,9 +75,9 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [gitpod.zellij](https://github.com/gitpod-samples/gitpod.zellij) Zellij plugin for Gitpod, with .gitpod.yml tasks integration
 * [jbz (Just Bacon Zellij)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
 * [zellijira](https://github.com/dam4rus/zellijira) Manage sessions around on Jira issues
+* [zellij-theme-configurator](https://rosmur.github.io/zellij-theme-configurator/) A web GUI for creating and exporting Zellij themes
 * [zj-docker](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
 * [zj-git-branch](https://github.com/dam4rus/zj-git-branch) Manage git branches
-* [zellij-theme-configurator](https://rosmur.github.io/zellij-theme-configurator/) A web GUI for creating and exporting Zellij themes
 
 # Integrations
 
