@@ -12,6 +12,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [room](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
+* [zellij-new-tab-next-to-current](https://github.com/vimkim/zellij-new-tab-next-to-current) creates new tabs next to the current tab instead of at the end of the tab bar
 * [zellij-nvim-nav-plugin](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
 * [zellij-pane-picker](https://github.com/shihanng/zellij-pane-picker) quickly switch, star, and jump to panes with customizable keyboard shortcuts
 * [zjpane](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
