@@ -79,6 +79,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellijira](https://github.com/dam4rus/zellijira) Manage sessions around on Jira issues
 * [zellij-bar-theme-config](https://github.com/allisonhere/zellij-bar-theme-config) A terminal UI for creating, editing, and applying Zellij themes.
 * [zellij-theme-configurator](https://rosmur.github.io/zellij-theme-configurator/) A web GUI for creating and exporting Zellij themes
+* [zellij-theme-maker](https://github.com/botmiao/zellij-theme-maker) A web-based theme editor with live preview, color picker, and KDL export
 * [zellij-vscode-toolkit](https://github.com/atoolz/zellij-vscode-toolkit) VS Code extension with IntelliSense, validation, hover docs, color preview, and snippets for Zellij config and layout files
 * [zj-docker](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
 * [zj-git-branch](https://github.com/dam4rus/zj-git-branch) Manage git branches
