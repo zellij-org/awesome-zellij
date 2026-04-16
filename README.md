@@ -58,6 +58,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 * [grab](https://github.com/imsnif/grab) A fuzzy finder (files, structs, enums, functions) for Rust devs
 * [monocole](https://github.com/imsnif/monocle) fuzzy find of file names and contents
+* [zellij-history-selector](https://github.com/longhongc/zellij-history-selector) floating history picker for shell, IPython, SQLite, clipboard, and custom sources with preview and insert/copy/execute actions
 
 ## Utilities
 
