@@ -31,7 +31,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-worktree](https://github.com/sharph/zellij-worktree) A Zellij plugin for managing git worktrees
 * [zsm](https://github.com/liam-mackie/zsm) A zoxide-integrated session switcher with support for default layouts
 
-## Status Bar 
+## Status Bar
 
 * [zellaude](https://github.com/ishefi/zellaude) a status bar plugin that shows Claude Code activity indicators on tabs
 * [zellij-cb](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
@@ -82,6 +82,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-vscode-toolkit](https://github.com/atoolz/zellij-vscode-toolkit) VS Code extension with IntelliSense, validation, hover docs, color preview, and snippets for Zellij config and layout files
 * [zj-docker](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
 * [zj-git-branch](https://github.com/dam4rus/zj-git-branch) Manage git branches
+* [zj-hooker](https://github.com/olekspickle/zj-hooker) Execute commmands and scripts on Zellij session attach/detach
 
 # Integrations
 
