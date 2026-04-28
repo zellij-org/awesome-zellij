@@ -9,6 +9,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 ## Navigation
 
 * [harpoon](https://github.com/Nacho114/harpoon) quickly navigate panes (clone of nvim's harpoon)
+* [neolij](https://github.com/y2w8/neolij.nvim) Seamless Neovim/Zellij integration with built-in navigation, pane/tab management, and Lua scripting.
 * [room](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
 * [zellij-jump-list](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
