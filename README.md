@@ -68,6 +68,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-attention (⭐25)](https://github.com/KiryuuLight/zellij-attention) add notification icons to tab names when panes need attention, designed for Claude Code
 * [zellij-bookmarks (⭐40)](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
 * [zellij-notepad (⭐9)](https://github.com/0xble/zellij-notepad) floating notepad pane with configurable editor, position, and timestamped notes
+* [zellij-palette](https://github.com/timonwong/zellij-palette) a fuzzy command palette for pane, tab, session, and theme actions, with custom commands and shell-backed sources
 * [zellij-playbooks (⭐18)](https://github.com/yaroslavborbat/zellij-playbooks) browse, select, and execute commands from playbook files directly in the terminal
 * [zellij-qr-share (⭐9)](https://github.com/dbachelder/zellij-qr-share) show a web token as a QR code in the terminal for fast mobile authentication in the web UI.
 * [zellij-send-keys (⭐16)](https://github.com/atani/zellij-send-keys) send text/commands to specific panes like tmux send-keys
