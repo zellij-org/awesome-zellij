@@ -47,7 +47,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 ## UI & Modes
 
 * [zellij-autolock (⭐150)](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane, seamless navigation for Vim, pairs well with [zellij.vim (⭐62)](https://github.com/fresh2dev/zellij.vim).
-* [zellij-delaylock] (https://github.com/codingfragments/zellij-delaylock) A simple plugin that would help to get back to locked mode after hitting the leader for tmux or unlock, timeout configurable
+* [zellij-delaylock](https://github.com/codingfragments/zellij-delaylock) A simple plugin that would help to get back to locked mode after hitting the leader for tmux or unlock, timeout configurable
 * [zellij-forgot (⭐237)](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
 * [zellij-getmode (⭐0)](https://github.com/chardskarth/zellij-getmode) a simple utility plugin that gets the current input mode of zellij
 * [zellij-layoutswitch (⭐3)](https://github.com/sgtrusty/zellij-layoutswitch) switch between layouts and tab panes natively & efficiently without shell bloat
