@@ -31,6 +31,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-switch (⭐48)](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [zellij-worktree (⭐3)](https://github.com/sharph/zellij-worktree) A Zellij plugin for managing git worktrees
 * [zsm (⭐34)](https://github.com/liam-mackie/zsm) A zoxide-integrated session switcher with support for default layouts
+* [zjsh](https://github.com/saweima12/zjsh) a Zellij session launcher with project config, session discovery, resurrection support, zoxide integration, and fzf/gum support
 
 ## Status Bar
 
