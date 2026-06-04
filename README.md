@@ -30,8 +30,8 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-sessionizer (⭐81)](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
 * [zellij-switch (⭐48)](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
 * [zellij-worktree (⭐3)](https://github.com/sharph/zellij-worktree) A Zellij plugin for managing git worktrees
-* [zsm (⭐34)](https://github.com/liam-mackie/zsm) A zoxide-integrated session switcher with support for default layouts
 * [zjsh](https://github.com/saweima12/zjsh) a Zellij session launcher with project config, session discovery, resurrection support, zoxide integration, and fzf/gum support
+* [zsm (⭐34)](https://github.com/liam-mackie/zsm) A zoxide-integrated session switcher with support for default layouts
 
 ## Status Bar
 
@@ -47,6 +47,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 ## UI & Modes
 
 * [zellij-autolock (⭐144)](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane, seamless navigation for Vim, pairs well with [zellij.vim (⭐61)](https://github.com/fresh2dev/zellij.vim).
+* [zellij-delaylock] (https://github.com/codingfragments/zellij-delaylock) A simple plugin that would help to get back to locked mode after hitting the leader for tmux or unlock, timeout configurable
 * [zellij-forgot (⭐230)](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
 * [zellij-getmode (⭐1)](https://github.com/chardskarth/zellij-getmode) a simple utility plugin that gets the current input mode of zellij
 * [zellij-layoutswitch (⭐3)](https://github.com/sgtrusty/zellij-layoutswitch) switch between layouts and tab panes natively & efficiently without shell bloat
@@ -55,7 +56,6 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-vertical-tabs (⭐41)](https://github.com/cfal/zellij-vertical-tabs) a plugin that displays tabs vertically as rows
 * [zellij-workspace (⭐35)](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
 * [zjswitcher (⭐13)](https://github.com/WingsZeng/zjswitcher) automatically switch between normal mode and locked mode
-* [zellij-delaylock] (https://github.com/codingfragments/zellij-delaylock) A simple plugin that would help to get back to locked mode after hitting the leader for tmux or unlock, timeout configurable
 
 ## Search
 
