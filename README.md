@@ -24,7 +24,6 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-attention (⭐36)](https://github.com/KiryuuLight/zellij-attention) add notification icons to tab names when panes need attention, designed for Claude Code
 * [zellij-autolock (⭐150)](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).
 * [zellij-bookmarks (⭐41)](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
-* [zellij-cb (⭐45)](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
 * [zellij-choose-tree (⭐46)](https://github.com/laperlej/zellij-choose-tree) quickly switch between sessions, inspired by tmux choose-tree
 * [zellij-favs (⭐23)](https://github.com/JoseMM2002/zellij-favs) adds a way to save favorites sessions and flush the others
 * [zellij-sessionizer (⭐83)](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
