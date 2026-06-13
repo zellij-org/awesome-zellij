@@ -34,6 +34,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 ## Status Bar
 
+* [showy-quota (⭐6)](https://github.com/enieuwy/showy-quota) a standalone WASM status bar plugin showing live AI coding-plan quotas (Codex, Claude, Copilot, Gemini…), driven by CodexBar
 * [zellaude (⭐81)](https://github.com/ishefi/zellaude) a status bar plugin that shows Claude Code activity indicators on tabs
 * [zellij-cb (⭐45)](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
 * [zellij-datetime (⭐50)](https://github.com/h1romas4/zellij-datetime) adds a date and time pane to your Zellij
