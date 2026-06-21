@@ -119,4 +119,5 @@ All the resources listed are community-driven: we cannot offer support but sugge
 ## Documentation and support
 
 * [The zellij docs](https://zellij.dev/documentation/introduction)
+* [Zellij Cheatsheet](https://zellijcheatsheet.dev/) - a fast, searchable reference covering panes, tabs, sessions and layouts, with copy-to-clipboard commands
 * and of course the zellij [Discord](https://discord.com/invite/CrUAFH3) and [Matrix](https://matrix.to/#/#zellij_general:matrix.org) for questions, support and discussions
