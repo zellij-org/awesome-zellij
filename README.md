@@ -16,8 +16,8 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-new-tab-next-to-current (⭐3)](https://github.com/vimkim/zellij-new-tab-next-to-current) creates new tabs next to the current tab instead of at the end of the tab bar
 * [zellij-nvim-nav-plugin (⭐13)](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
 * [zellij-pane-picker (⭐26)](https://github.com/shihanng/zellij-pane-picker) quickly switch, star, and jump to panes with customizable keyboard shortcuts
-* [zjpane (⭐14)](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 * [zellij-leap (⭐0)](https://github.com/Picalines/zellij-leap) Switch to tabs / panes / sessions with as few keys as possible
+* [zjpane (⭐14)](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
 
 ## Session Management
 
