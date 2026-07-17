@@ -44,10 +44,10 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-datetime (⭐50)](https://github.com/h1romas4/zellij-datetime) adds a date and time pane to your Zellij
 * [zellij-load (⭐8)](https://github.com/Christian-Prather/zellij-load) show system resources such as CPU, memory and GPU usage. Similar to [tmux cpu-usage](https://github.com/dracula/tmux/blob/master/docs/CONFIG.md#cpu-usage---up)
 * [zellij-what-time (⭐14)](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
-* [zj-radar (⭐1)](https://github.com/marktoda/zj-radar) a pinned sidebar showing which AI agents (Claude Code, Codex) are working, done, or waiting for you across all tabs, with click-to-jump
-* [zj-status-bar (⭐35)](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
 * [zjstatus (⭐979)](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 * [zjstatus-hints (⭐74)](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
+* [zj-radar (⭐1)](https://github.com/marktoda/zj-radar) a pinned sidebar showing which AI agents (Claude Code, Codex) are working, done, or waiting for you across all tabs, with click-to-jump
+* [zj-status-bar (⭐35)](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
 
 ## UI & Modes
 
@@ -75,11 +75,11 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [multitask (⭐146)](https://github.com/imsnif/multitask) a mini-CI as a Zellij plugin
 * [zellij-attention (⭐36)](https://github.com/KiryuuLight/zellij-attention) add notification icons to tab names when panes need attention, designed for Claude Code
 * [zellij-bookmarks (⭐41)](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
+* [zellij-link-extended (⭐0)](https://github.com/bezbac/zellij-link-extended) extends the built-in link plugin to open files, directories, and links via a configurable command
 * [zellij-notepad (⭐9)](https://github.com/0xble/zellij-notepad) floating notepad pane with configurable editor, position, and timestamped notes
 * [zellij-palette (⭐6)](https://github.com/timonwong/zellij-palette) a fuzzy command palette for pane, tab, session, and theme actions, with custom commands and shell-backed sources
 * [zellij-playbooks (⭐18)](https://github.com/yaroslavborbat/zellij-playbooks) browse, select, and execute commands from playbook files directly in the terminal
 * [zellij-qr-share (⭐9)](https://github.com/dbachelder/zellij-qr-share) show a web token as a QR code in the terminal for fast mobile authentication in the web UI.
-* [zellij-link-extended (⭐0)](https://github.com/bezbac/zellij-link-extended) extends the built-in link plugin to open files, directories, and links via a configurable command
 * [zellij-send-keys (⭐20)](https://github.com/atani/zellij-send-keys) send text/commands to specific panes like tmux send-keys
 * [zj-quit (⭐44)](https://github.com/cristiand391/zj-quit) a friendly `quit` plugin for zellij
 
