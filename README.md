@@ -23,7 +23,6 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 * [lazy-zellij (⭐0)](https://github.com/Logos-Flux/lazy-zellij) an fzf session picker with live preview (tabs, per-pane commands, screen snapshot), systemd autostart, and remote sessions over SSH
 * [noren(⭐0)](https://github.com/MaySeikatsu/noren) A sesh-style session manager for zellij - brush through the curtain into any project 
-* [zellij-tabula (⭐4)](https://github.com/bezbac/zellij-tabula) automatically rename tabs based on the current working directory of the contained panes
 * [zbuffers (⭐21)](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
 * [zellij-attention (⭐36)](https://github.com/KiryuuLight/zellij-attention) add notification icons to tab names when panes need attention, designed for Claude Code
 * [zellij-autolock (⭐150)](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).
@@ -32,6 +31,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-favs (⭐23)](https://github.com/JoseMM2002/zellij-favs) adds a way to save favorites sessions and flush the others
 * [zellij-sessionizer (⭐83)](https://github.com/laperlej/zellij-sessionizer) create sessions based on folder names
 * [zellij-switch (⭐48)](https://github.com/mostafaqanbaryan/zellij-switch) switching between sessions in CLI using `zellij pipe`
+* [zellij-tabula (⭐4)](https://github.com/bezbac/zellij-tabula) automatically rename tabs based on the current working directory of the contained panes
 * [zellij-worktree (⭐6)](https://github.com/sharph/zellij-worktree) A Zellij plugin for managing git worktrees
 * [zjsh (⭐6)](https://github.com/saweima12/zjsh) a Zellij session launcher with project config, session discovery, resurrection support, zoxide integration, and fzf/gum support
 * [zsm (⭐35)](https://github.com/liam-mackie/zsm) A zoxide-integrated session switcher with support for default layouts
