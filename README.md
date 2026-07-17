@@ -22,6 +22,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 ## Session Management
 
 * [lazy-zellij (⭐0)](https://github.com/Logos-Flux/lazy-zellij) an fzf session picker with live preview (tabs, per-pane commands, screen snapshot), systemd autostart, and remote sessions over SSH
+* [noren(⭐0)](https://github.com/MaySeikatsu/noren) A sesh-style session manager for zellij - brush through the curtain into any project 
 * [zellij-tabula (⭐4)](https://github.com/bezbac/zellij-tabula) automatically rename tabs based on the current working directory of the contained panes
 * [zbuffers (⭐21)](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
 * [zellij-attention (⭐36)](https://github.com/KiryuuLight/zellij-attention) add notification icons to tab names when panes need attention, designed for Claude Code
