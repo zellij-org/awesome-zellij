@@ -17,11 +17,13 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-nvim-nav-plugin (⭐13)](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
 * [zellij-pane-picker (⭐26)](https://github.com/shihanng/zellij-pane-picker) quickly switch, star, and jump to panes with customizable keyboard shortcuts
 * [zjpane (⭐14)](https://github.com/FuriouZz/zjpane) Navigate between zellij panes easily
+* [zellij-leap (⭐0)](https://github.com/Picalines/zellij-leap) Switch to tabs / panes / sessions with as few keys as possible
 
 ## Session Management
 
 * [lazy-zellij (⭐0)](https://github.com/Logos-Flux/lazy-zellij) an fzf session picker with live preview (tabs, per-pane commands, screen snapshot), systemd autostart, and remote sessions over SSH
 * [noren(⭐0)](https://github.com/MaySeikatsu/noren) A sesh-style session manager for zellij - brush through the curtain into any project 
+* [zellij-tabula (⭐4)](https://github.com/bezbac/zellij-tabula) automatically rename tabs based on the current working directory of the contained panes
 * [zbuffers (⭐21)](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
 * [zellij-attention (⭐36)](https://github.com/KiryuuLight/zellij-attention) add notification icons to tab names when panes need attention, designed for Claude Code
 * [zellij-autolock (⭐150)](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).
@@ -42,6 +44,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-datetime (⭐50)](https://github.com/h1romas4/zellij-datetime) adds a date and time pane to your Zellij
 * [zellij-load (⭐8)](https://github.com/Christian-Prather/zellij-load) show system resources such as CPU, memory and GPU usage. Similar to [tmux cpu-usage](https://github.com/dracula/tmux/blob/master/docs/CONFIG.md#cpu-usage---up)
 * [zellij-what-time (⭐14)](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
+* [zj-radar (⭐1)](https://github.com/marktoda/zj-radar) a pinned sidebar showing which AI agents (Claude Code, Codex) are working, done, or waiting for you across all tabs, with click-to-jump
 * [zj-status-bar (⭐35)](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
 * [zjstatus (⭐979)](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 * [zjstatus-hints (⭐74)](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
@@ -76,6 +79,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-palette (⭐6)](https://github.com/timonwong/zellij-palette) a fuzzy command palette for pane, tab, session, and theme actions, with custom commands and shell-backed sources
 * [zellij-playbooks (⭐18)](https://github.com/yaroslavborbat/zellij-playbooks) browse, select, and execute commands from playbook files directly in the terminal
 * [zellij-qr-share (⭐9)](https://github.com/dbachelder/zellij-qr-share) show a web token as a QR code in the terminal for fast mobile authentication in the web UI.
+* [zellij-link-extended (⭐0)](https://github.com/bezbac/zellij-link-extended) extends the built-in link plugin to open files, directories, and links via a configurable command
 * [zellij-send-keys (⭐20)](https://github.com/atani/zellij-send-keys) send text/commands to specific panes like tmux send-keys
 * [zj-quit (⭐44)](https://github.com/cristiand391/zj-quit) a friendly `quit` plugin for zellij
 
@@ -88,6 +92,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-theme-configurator](https://rosmur.github.io/zellij-theme-configurator/) A web GUI for creating and exporting Zellij themes
 * [zellij-vscode-toolkit (⭐9)](https://github.com/atoolz/zellij-vscode-toolkit) VS Code extension with IntelliSense, validation, hover docs, color preview, and snippets for Zellij config and layout files
 * [zj-docker (⭐42)](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
+* [zj-podman (⭐0)](https://github.com/blackfyre/zj-podman) display podman containers and perform basic operations
 * [zj-git-branch (⭐8)](https://github.com/dam4rus/zj-git-branch) Manage git branches
 * [zj-hooker (⭐0)](https://github.com/olekspickle/zj-hooker) Execute commmands and scripts on Zellij session attach/detach
 
@@ -99,6 +104,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [yazelix (⭐1k)](https://github.com/luccahuguet/yazelix) zellij, yazi and nushell adding a File Tree to Helix & helix-friendly keybindigs for zellij!
 * [zeco (⭐69)](https://github.com/julianbuettner/zeco) Share your zellij session over the internet, easy and secure!
 * [zellij-sessionizer (⭐47)](https://github.com/victor-falcon/zellij-sessionizer) A fuzzy finder-powered project switcher for Zellij sessions, inspired by [ThePrimeagen/tmux-sessionizer](https://github.com/ThePrimeagen/tmux-sessionizer)
+* [zellij-urlview](https://github.com/VV0JC13CH/zellij-urlview) Quickly open displayed url(s)! Inspired by [tmux-urlview](https://github.com/tmux-plugins/tmux-urlview)
 * [zellix (⭐50)](https://github.com/TheEmeraldBee/zellix) A nushell wrapper over helix that leverages the power of zellij to turn it into a plugin system!
 * [zide (⭐319)](https://github.com/josephschmitt/zide) Zellij layouts + bash scripts to create an IDE-like file picker and editor workflow that works in any shell and with most any visual file pickers!
 * [zrw (⭐4)](https://github.com/ivoronin/zrw) run commands in Zellij panes, wait for completion, and propagate exit codes
