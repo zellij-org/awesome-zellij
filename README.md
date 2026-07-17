@@ -92,9 +92,9 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-theme-configurator](https://rosmur.github.io/zellij-theme-configurator/) A web GUI for creating and exporting Zellij themes
 * [zellij-vscode-toolkit (⭐9)](https://github.com/atoolz/zellij-vscode-toolkit) VS Code extension with IntelliSense, validation, hover docs, color preview, and snippets for Zellij config and layout files
 * [zj-docker (⭐42)](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
-* [zj-podman (⭐0)](https://github.com/blackfyre/zj-podman) display podman containers and perform basic operations
 * [zj-git-branch (⭐8)](https://github.com/dam4rus/zj-git-branch) Manage git branches
 * [zj-hooker (⭐0)](https://github.com/olekspickle/zj-hooker) Execute commmands and scripts on Zellij session attach/detach
+* [zj-podman (⭐0)](https://github.com/blackfyre/zj-podman) display podman containers and perform basic operations
 
 # Integrations
 
