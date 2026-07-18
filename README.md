@@ -1,4 +1,4 @@
-# Awesome [Zellij (⭐34k)](https://github.com/zellij-org/zellij)
+# Awesome [Zellij](https://github.com/zellij-org/zellij)
 
 A list of resources for Zellij workspace: plugins, tutorials and configuration settings.
 
