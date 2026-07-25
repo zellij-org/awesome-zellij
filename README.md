@@ -61,6 +61,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-vertical-tabs (⭐56)](https://github.com/cfal/zellij-vertical-tabs) a plugin that displays tabs vertically as rows
 * [zellij-workspace (⭐38)](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
 * [zjswitcher (⭐14)](https://github.com/WingsZeng/zjswitcher) automatically switch between normal mode and locked mode
+* [zellij-background-tint (⭐0)](https://github.com/MarcinOrlowski/zellij-background-tint) Subtly tint background color of openedpanes to make them visually distinct
 
 ## Search
 
