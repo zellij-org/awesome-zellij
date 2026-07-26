@@ -46,6 +46,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-what-time (⭐16)](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
 * [zjstatus (⭐1k)](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 * [zjstatus-hints (⭐82)](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
+* [zj-agents](https://github.com/kaankoken/zj-agents) background engine + floating sidebar: classify coding-agent panes (Idle/Working/Blocked/Done) from process + viewport manifests, desktop notifications; Claude, Codex, Grok, Pi, OMP
 * [zj-radar (⭐5)](https://github.com/marktoda/zj-radar) a pinned sidebar showing which AI agents (Claude Code, Codex) are working, done, or waiting for you across all tabs, with click-to-jump
 * [zj-status-bar (⭐35)](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
 
