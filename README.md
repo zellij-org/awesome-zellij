@@ -110,6 +110,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellix (⭐50)](https://github.com/TheEmeraldBee/zellix) A nushell wrapper over helix that leverages the power of zellij to turn it into a plugin system!
 * [zide (⭐332)](https://github.com/josephschmitt/zide) Zellij layouts + bash scripts to create an IDE-like file picker and editor workflow that works in any shell and with most any visual file pickers!
 * [zrw (⭐4)](https://github.com/ivoronin/zrw) run commands in Zellij panes, wait for completion, and propagate exit codes
+* [captain-miao (⭐0)](https://github.com/hyperlogue/captain-miao) TUI to monitor and organize multiple AI coding sessions in zellij, through `zellij action`.
   
 # Tutorials
 
