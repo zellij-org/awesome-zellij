@@ -91,6 +91,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zj-agents (⭐4)](https://github.com/kaankoken/zj-agents) background engine + floating sidebar: classify coding-agent panes (Idle/Working/Blocked/Done) from process + viewport manifests, desktop notifications; Claude, Codex, Grok, Pi, OMP
 * [zj-agent-mob (⭐3)](https://github.com/mohseenrm/zj-agent-mob) a floating panel tracking Claude Code and Codex agents across every session: live status, current task, jump-to-pane across sessions, approve/reject permission prompts, and kill runaways
 * [zj-radar (⭐32)](https://github.com/marktoda/zj-radar) a pinned sidebar showing which AI agents (Claude Code, Codex) are working, done, or waiting for you across all tabs, with click-to-jump
+* [zellij-wrangler](https://github.com/chrispository/zellij-wrangler) cross-pane/cross-tab/cross-agent communication for Zellij, inspired by herdr.
 
 ## External Tools
 
