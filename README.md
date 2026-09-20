@@ -40,6 +40,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-cb (⭐52)](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
 * [zellij-datetime (⭐54)](https://github.com/h1romas4/zellij-datetime) adds a date and time pane to your Zellij
 * [zellij-load (⭐11)](https://github.com/Christian-Prather/zellij-load) show system resources such as CPU, memory and GPU usage. Similar to [tmux cpu-usage](https://github.com/dracula/tmux/blob/master/docs/CONFIG.md#cpu-usage---up)
+* [zellij-vertical-tabs (⭐0)](https://github.com/yolo-labz/zellij-vertical-tabs) a vertical tab-bar sidebar for Zellij that keeps rendering under heavy load by not subscribing to PaneUpdate
 * [zellij-what-time (⭐16)](https://github.com/pirafrank/zellij-what-time) shows host system date and/or time in the status bar. Inspired by zellij-datetime
 * [zjstatus (⭐1k)](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 * [zjstatus-hints (⭐85)](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
