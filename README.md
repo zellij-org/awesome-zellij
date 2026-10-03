@@ -12,6 +12,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [neolij (⭐30)](https://github.com/y2w8/neolij.nvim) Seamless Neovim/Zellij integration with built-in navigation, pane/tab management, and Lua scripting.
 * [room (⭐295)](https://github.com/rvcas/room) quickly search and switch tabs 🖤
 * [vim-zellij-navigator (⭐178)](https://github.com/hiasr/vim-zellij-navigator) Seamless navigation with vim in zellij
+* [zellij-autolock (⭐163)](https://github.com/fresh2dev/zellij-autolock) Seamless Zellij: modes that follow your focus. Automatically locks Zellij when Vim, fzf, and other programs are in the focused pane, and unlocks at the shell prompt. Pairs well with [zellij.vim (⭐66)](https://github.com/fresh2dev/zellij.vim).
 * [zellij-jump-list (⭐26)](https://github.com/blank2121/zellij-jump-list) navigate your motions from pane-to-pane (similar to Vim, Neovim, and Emacs jump list)
 * [zellij-new-tab-next-to-current (⭐6)](https://github.com/vimkim/zellij-new-tab-next-to-current) creates new tabs next to the current tab instead of at the end of the tab bar
 * [zellij-nvim-nav-plugin (⭐12)](https://github.com/sharph/zellij-nvim-nav-plugin) Another plugin for seamless navigation with neovim/vim windows
@@ -24,7 +25,6 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [lazy-zellij (⭐11)](https://github.com/Logos-Flux/lazy-zellij) an fzf session picker with live preview (tabs, per-pane commands, screen snapshot), systemd autostart, and remote sessions over SSH
 * [noren (⭐2)](https://github.com/MaySeikatsu/noren) A sesh-style session manager for zellij - brush through the curtain into any project 
 * [zbuffers (⭐24)](https://github.com/Strech/zbuffers) a minimal and convenient way to switch between tabs, inspired by Emacs vertico-buffers and Zellij session-manager
-* [zellij-autolock (⭐161)](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane. Seamless navigation for Vim and more. Pairs well with [zellij.vim (⭐65)](https://github.com/fresh2dev/zellij.vim).
 * [zellij-bookmarks (⭐46)](https://github.com/yaroslavborbat/zellij-bookmarks) manage command bookmarks and quickly insert them into the terminal
 * [zellij-choose-tree (⭐47)](https://github.com/laperlej/zellij-choose-tree) quickly switch between sessions, inspired by tmux choose-tree
 * [zellij-favs (⭐23)](https://github.com/JoseMM2002/zellij-favs) adds a way to save favorites sessions and flush the others
@@ -48,7 +48,6 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 ## UI & Modes
 
-* [zellij-autolock (⭐161)](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane, seamless navigation for Vim, pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).
 * [zellij-background-tint (⭐2)](https://github.com/MarcinOrlowski/zellij-background-tint) Subtly tint background color of opened panes to make them visually distinct
 * [zellij-delaylock (⭐1)](https://github.com/codingfragments/zellij-delaylock) A simple plugin that would help to get back to locked mode after hitting the leader for tmux or unlock, timeout configurable
 * [zellij-forgot (⭐257)](https://github.com/karimould/zellij-forgot) swiftly present and access your keybinds (and more)
