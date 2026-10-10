@@ -45,6 +45,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjstatus-hints (⭐85)](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
 * [zjstatus-hints (fork) (⭐3)](https://github.com/myah-mitchell/zjstatus-hints) adds mode-aware key binding hints to zjstatus, with styling, keybind discovery, and width-aware fitting
 * [zj-status-bar (⭐36)](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
+* [zellij-status-bar-ng (⭐36)](https://github.com/fulldecent/zellij-status-bar-ng) a drop-in replacement for Zellij’s default status-bar plugin
 
 ## UI & Modes
 
