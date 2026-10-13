@@ -98,6 +98,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [jbz (Just Bacon Zellij) (⭐47)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
 * [zellijira (⭐3)](https://github.com/dam4rus/zellijira) Manage sessions around on Jira issues
 * [zellit (⭐19)](https://github.com/allisonhere/zellit) A terminal UI for creating, editing, and applying Zellij themes.
+* [zellij-plugin-snapshot](https://github.com/fulldecent/zellij-plugin-snapshot) load a plugin wasm, feed it session events from a YAML script, and write the render as ANSI and SVG
 * [zellij-theme-configurator](https://rosmur.github.io/zellij-theme-configurator/) A web GUI for creating and exporting Zellij themes
 * [zellij-vscode-toolkit (⭐9)](https://github.com/atoolz/zellij-vscode-toolkit) VS Code extension with IntelliSense, validation, hover docs, color preview, and snippets for Zellij config and layout files
 * [zj-docker (⭐43)](https://github.com/dj95/zj-docker) display docker containers and perform basic operations
@@ -128,6 +129,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 * [A comprehensive walkthrough on developing Zellij plugins (⭐11)](https://github.com/Kangaxx-0/first-zellij-plugin)
 * [Learnings from developing a zellij plugin](https://blog.nerd.rocks/posts/profiling-zellij-plugins/) an informative blog post from the creator of [zjstatus (⭐1k)](https://github.com/dj95/zjstatus)
+* [Zellij Plugin Snapshot](https://github.com/fulldecent/zellij-plugin-snapshot) drive a plugin wasm from a YAML script and write the render as SVG
 * [Developing WebAssembly Rust plugins for Zellij](https://www.youtube.com/watch?v=pgNIcQ8rTXk) Aram Drevekenin's talk at RustLab 2023
 * [How to use Zellij Switch plugin](https://mostafaqanbaryan.com/zellij-attach-plugin/) a blog post about using fzf and zoxide with zellij-switch
 
