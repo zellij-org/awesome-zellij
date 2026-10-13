@@ -56,6 +56,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-layoutswitch (⭐3)](https://github.com/sgtrusty/zellij-layoutswitch) switch between layouts and tab panes natively & efficiently without shell bloat.
 * [zellij-newtab-plus (⭐14)](https://github.com/AlexZasorin/zellij-newtab-plus) create named tabs and navigate using zoxide in one keybind
 * [zellij-tab-bar-indexed (⭐17)](https://github.com/ivoronin/zellij-tab-bar-indexed) a tab-bar plugin that adds numeric indices to tabs for quick navigation
+* [zellij-tab-bar-ng (⭐0)](https://github.com/fulldecent/zellij-tab-bar-ng) a ribbon replacement for Zellij’s default tab-bar plugin. Click a tab, click `+`, and the line stays inside the screen.
 * [zellij-vertical-tabs (⭐61)](https://github.com/cfal/zellij-vertical-tabs) a plugin that displays tabs vertically as rows
 * [zellij-workspace (⭐39)](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
 * [zellij-zen (⭐0)](https://github.com/kxrur/zellij-zen) toggle the tab-bar and status-bar for a distraction-free "zen" mode
