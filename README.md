@@ -46,6 +46,10 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjstatus-hints (fork) (⭐3)](https://github.com/myah-mitchell/zjstatus-hints) adds mode-aware key binding hints to zjstatus, with styling, keybind discovery, and width-aware fitting
 * [zj-status-bar (⭐36)](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
 
+## Tab bar
+
+* [zellij-tab-bar-ng (⭐0)](https://github.com/fulldecent/zellij-tab-bar-ng) a ribbon replacement for Zellij’s default tab-bar plugin. Click a tab, click `+`, and the line stays inside the screen.
+
 ## UI & Modes
 
 * [zellij-autolock (⭐161)](https://github.com/fresh2dev/zellij-autolock) Automatically lock Zellij depending on the command in the focused pane, seamless navigation for Vim, pairs well with [zellij.vim](https://github.com/fresh2dev/zellij.vim).
