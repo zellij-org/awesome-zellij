@@ -58,6 +58,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-tab-bar-indexed (⭐17)](https://github.com/ivoronin/zellij-tab-bar-indexed) a tab-bar plugin that adds numeric indices to tabs for quick navigation
 * [zellij-vertical-tabs (⭐61)](https://github.com/cfal/zellij-vertical-tabs) a plugin that displays tabs vertically as rows
 * [zellij-workspace (⭐39)](https://github.com/vdbulcke/zellij-workspace) apply layouts to current session
+* [zellij-zen (⭐0)](https://github.com/kxrur/zellij-zen) toggle the tab-bar and status-bar for a distraction-free "zen" mode
 * [zjswitcher (⭐14)](https://github.com/WingsZeng/zjswitcher) automatically switch between normal mode and locked mode
 
 ## Search
