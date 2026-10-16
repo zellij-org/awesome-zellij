@@ -110,7 +110,6 @@ All the resources listed are community-driven: we cannot offer support but sugge
 # Integrations
 
 * [fzf-zellij (⭐16)](https://github.com/k-kuroguro/fzf-zellij) Shell script to start fzf in a Zellij floating pane.
-* [zj-cmd (⭐0)](https://github.com/tzeitim/zj-cmd) fzf command prompt for every zellij action, plus a searchable keybinding cheat sheet, in floating panes. Built live from your zellij install and config.
 * [theylix](https://codeberg.org/hobgoblina/theylix) Zellij, Helix, and various cli tools ([Yazi (⭐41k)](https://github.com/sxyazi/yazi), [Lazygit](https://github.com/jesseduffield/lazygit), [LazySQL](https://github.com/jorgerojas26/lazysql), [Slumber](https://github.com/LucasPickering/slumber), [Serpl](https://github.com/yassinebridi/serpl), `git blame` via [Tig](https://github.com/jonas/tig)) as a zen-mode IDE
 * [yazelix (⭐1.1k)](https://github.com/luccahuguet/yazelix) zellij, yazi and nushell adding a File Tree to Helix & helix-friendly keybindigs for zellij!
 * [zeco (⭐78)](https://github.com/julianbuettner/zeco) Share your zellij session over the internet, easy and secure!
@@ -118,6 +117,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zellij-urlview (⭐1)](https://github.com/VV0JC13CH/zellij-urlview) Quickly open displayed url(s)! Inspired by [tmux-urlview (⭐291)](https://github.com/tmux-plugins/tmux-urlview)
 * [zellix (⭐50)](https://github.com/TheEmeraldBee/zellix) A nushell wrapper over helix that leverages the power of zellij to turn it into a plugin system!
 * [zide (⭐337)](https://github.com/josephschmitt/zide) Zellij layouts + bash scripts to create an IDE-like file picker and editor workflow that works in any shell and with most any visual file pickers!
+* [zj-cmd (⭐0)](https://github.com/tzeitim/zj-cmd) fzf command prompt for every zellij action, plus a searchable keybinding cheat sheet, in floating panes. Built live from your zellij install and config.
 * [zrw (⭐4)](https://github.com/ivoronin/zrw) run commands in Zellij panes, wait for completion, and propagate exit codes
   
 # Tutorials
