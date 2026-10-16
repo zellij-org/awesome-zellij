@@ -110,6 +110,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 # Integrations
 
 * [fzf-zellij (⭐16)](https://github.com/k-kuroguro/fzf-zellij) Shell script to start fzf in a Zellij floating pane.
+* [zj-cmd (⭐0)](https://github.com/tzeitim/zj-cmd) fzf command prompt for every zellij action, plus a searchable keybinding cheat sheet, in floating panes. Built live from your zellij install and config.
 * [theylix](https://codeberg.org/hobgoblina/theylix) Zellij, Helix, and various cli tools ([Yazi (⭐41k)](https://github.com/sxyazi/yazi), [Lazygit](https://github.com/jesseduffield/lazygit), [LazySQL](https://github.com/jorgerojas26/lazysql), [Slumber](https://github.com/LucasPickering/slumber), [Serpl](https://github.com/yassinebridi/serpl), `git blame` via [Tig](https://github.com/jonas/tig)) as a zen-mode IDE
 * [yazelix (⭐1.1k)](https://github.com/luccahuguet/yazelix) zellij, yazi and nushell adding a File Tree to Helix & helix-friendly keybindigs for zellij!
 * [zeco (⭐78)](https://github.com/julianbuettner/zeco) Share your zellij session over the internet, easy and secure!
