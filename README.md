@@ -46,7 +46,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjstatus (⭐1k)](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 * [zjstatus-hints (⭐88)](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
 * [zj-status-bar (⭐36)](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
-* [ade-zjstatus (⭐1)](https://github.com/ag14774/ade-zjstatus) a zjstatus fork, geared towards Agentic Development Environments (ADE), with agent activity support (OSC 7501), and tab grouping
+* [ade-zjstatus](https://github.com/ag14774/ade-zjstatus) a zjstatus fork for agentic development: shows what coding agents (Claude Code, OpenCode, …) are doing on each tab, and adds collapsible tab groups
 
 
 ## UI & Modes
