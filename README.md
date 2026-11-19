@@ -128,8 +128,10 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 ## Basics
 
-* [Zellij basic functionality](https://zellij.dev/tutorials/basic-functionality/)
+* [Zellij Basics](https://youtu.be/v8SqIHSDGvY?si=y-bfvVNgRCd_9vzb) - Effective setup and workflows, with introduction to session management, pane functionality,  terminal notifications and more.
 * [Using and creating Layouts](https://zellij.dev/tutorials/layouts/)
+* [Workflows and Tips for Code Reviews](https://youtu.be/a7RfcgYZye8?si=Lft3-tXeQeI1Dti3) - covering pane toggling and breaking, tab navigation and work with editor.
+* [AI Management with Zellij](https://youtu.be/fC4MSQZOGME?si=LVRp1GE6wGnYrPr4) - covering multi-tab use, the Zellij inbox feature, sorting and session management.
 
 ## Plugins
 
