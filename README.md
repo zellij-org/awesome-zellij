@@ -37,6 +37,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 ## Status Bar
 
+* [ade-zjstatus](https://github.com/ag14774/ade-zjstatus) a zjstatus fork for agentic development: shows what coding agents (Claude Code, OpenCode, …) are doing on each tab, and adds collapsible tab groups
 * [zellij-cb (⭐53)](https://github.com/ndavd/zellij-cb) a customizable compact bar for Zellij
 * [zellij-datetime (⭐52)](https://github.com/h1romas4/zellij-datetime) adds a date and time pane to your Zellij
 * [zellij-load (⭐11)](https://github.com/Christian-Prather/zellij-load) show system resources such as CPU, memory and GPU usage. Similar to [tmux cpu-usage](https://github.com/dracula/tmux/blob/master/docs/CONFIG.md#cpu-usage---up)
@@ -46,7 +47,6 @@ All the resources listed are community-driven: we cannot offer support but sugge
 * [zjstatus (⭐1k)](https://github.com/dj95/zjstatus) a configurable, themeable statusbar plugin
 * [zjstatus-hints (⭐88)](https://github.com/b0o/zjstatus-hints) adds mode-aware key binding hints to zjstatus
 * [zj-status-bar (⭐36)](https://github.com/cristiand391/zj-status-bar) an opinionated fork of the compact-bar plugin
-* [ade-zjstatus](https://github.com/ag14774/ade-zjstatus) a zjstatus fork for agentic development: shows what coding agents (Claude Code, OpenCode, …) are doing on each tab, and adds collapsible tab groups
 
 
 ## UI & Modes
