@@ -102,6 +102,7 @@ All the resources listed are community-driven: we cannot offer support but sugge
 
 * [gitpod.zellij (⭐9)](https://github.com/gitpod-samples/gitpod.zellij) Zellij plugin for Gitpod, with .gitpod.yml tasks integration
 * [jbz (Just Bacon Zellij) (⭐49)](https://github.com/nim65s/jbz) display your just commands wrapped in bacon
+* [keybind-find (⭐11)](https://github.com/Benjmhart/keybind-find) a desktop-wide command palette that lists zellij's keys in every mode, your config.kdl on top, and presses the one you pick
 * [zellijira (⭐2)](https://github.com/dam4rus/zellijira) Manage sessions around on Jira issues
 * [zellit (⭐24)](https://github.com/allisonhere/zellit) A terminal UI for creating, editing, and applying Zellij themes.
 * [zellij-theme-configurator](https://rosmur.github.io/zellij-theme-configurator/) A web GUI for creating and exporting Zellij themes
